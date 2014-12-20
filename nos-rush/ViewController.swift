@@ -15,10 +15,10 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     
     // Initialize it right away here
     private let contentImages = ["Intro1.png",
-                                 "Intro2.png",
-                                 "Intro3.png"];
+        "Intro2.png",
+        "Intro3.png"];
     
-       // MARK: - View Lifecycle
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         createPageViewController()
@@ -41,7 +41,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
         self.view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
     }
-
+    
     private func setupPageControl() {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.grayColor()
@@ -99,6 +99,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource {
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
-
+    
 }
 

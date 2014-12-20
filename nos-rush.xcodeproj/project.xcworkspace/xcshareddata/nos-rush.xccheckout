@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FA777ECF-1572-40E9-A216-AAEC04E2D178</string>
+	<key>IDESourceControlProjectName</key>
+	<string>nos-rush</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9B49B5DCE9342290DAFF649DFA15521189CCEB3A</key>
+		<string>https://github.com/LesleyMerks/nos-rush-copy.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>nos-rush.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9B49B5DCE9342290DAFF649DFA15521189CCEB3A</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/LesleyMerks/nos-rush-copy.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9B49B5DCE9342290DAFF649DFA15521189CCEB3A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9B49B5DCE9342290DAFF649DFA15521189CCEB3A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>nos-rush%20copy</string>
+		</dict>
+	</array>
+</dict>
+</plist>
