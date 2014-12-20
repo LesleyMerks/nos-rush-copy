@@ -14,34 +14,34 @@ class Home: UIViewController {
     var data = getData()
     
     @IBOutlet weak var userButton: UIButton!
-
+    
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var backgroundMaskView: UIView!
     @IBOutlet weak var dialogView: UIView!
     @IBOutlet weak var imageButton: UIButton!
-
+    
     @IBOutlet weak var newsTitel: UILabel!
     @IBOutlet weak var newsCategory: UILabel!
     @IBOutlet weak var newsSubText: UILabel!
     @IBOutlet weak var newsDate: UILabel!
-
+    
+    @IBOutlet weak var newsAlert: UILabel!
     @IBOutlet weak var newsIndex: UILabel!
     @IBOutlet weak var newsTotal: UILabel!
     
-
+    
     
     @IBAction func saveItem(sender: AnyObject) {
         
-       
+        
         
     }
     
-  
     @IBAction func imageButtonDidPress(sender: AnyObject) {
         
-       
-                self.performSegueWithIdentifier("homeToDetail", sender: self)
-
+        
+        self.performSegueWithIdentifier("homeToDetail", sender: self)
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -59,30 +59,41 @@ class Home: UIViewController {
         
         return false;
     }
-
-  
     
-
-//    var data = getData()
+    
+    
+    
+    //    var data = getData()
     var nextbackground = 1
     var number = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-               
-      
-       insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
-//        insertBlurView(headerView, UIBlurEffectStyle.Dark)
+        
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.translucent = true
+        
+        insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
+        //        insertBlurView(headerView, UIBlurEffectStyle.Dark)
         
         animator = UIDynamicAnimator(referenceView: view)
         
-        dialogView.alpha = 1
+        dialogView.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(Bool())
         
+        //        UIView.animateWithDuration(1.5, animations: {
+        //            self.dialogView.alpha = 1.0
+        //                    })
+        dialogView.alpha = 0
+        newsAlert.alpha = 0
+        
+        //
         let scale = CGAffineTransformMakeScale(1.0, 1.0)
         let translate = CGAffineTransformMakeTranslation(0, 0)
         dialogView.transform = CGAffineTransformConcat(scale, translate)
@@ -91,12 +102,15 @@ class Home: UIViewController {
             let scale = CGAffineTransformMakeScale(1, 1)
             let translate = CGAffineTransformMakeTranslation(0, 0)
             self.dialogView.transform = CGAffineTransformConcat(scale, translate)
-            self.dialogView.alpha = 1
+            //            self.dialogView.alpha = 1
         }
-//
-//println(data.count)
-//         println(number)
-       
+        UIView.animateWithDuration(0.8, animations: {
+            self.dialogView.alpha = 1.0
+        })
+        //
+        //println(data.count)
+        //         println(number)
+        
         
         newsIndex.text = String(number + 1 )
         newsTotal.text = String(data.count )
@@ -106,8 +120,8 @@ class Home: UIViewController {
         newsSubText.text = data[number]["subtext"]
         backgroundImageView.image = UIImage(named: data[nextbackground]["image"]!)
         imageButton.setImage(UIImage(named: data[number]["image"]!), forState: UIControlState.Normal)
-//        backgroundImageView.image = UIImage(named: data[number]["image"]!)
-       
+        //        backgroundImageView.image = UIImage(named: data[number]["image"]!)
+        
     }
     
     var animator : UIDynamicAnimator!
@@ -117,7 +131,7 @@ class Home: UIViewController {
     
     
     @IBOutlet var PanRecognizer: UIPanGestureRecognizer!
-   
+    
     @IBAction func HandleGesture(sender: AnyObject) {
         
         let myView = dialogView
@@ -146,7 +160,7 @@ class Home: UIViewController {
             animator.addBehavior(snapBehavior)
             
             let translation = sender.translationInView(view)
-            if translation.x < 50 {
+            if translation.x < 140 {
                 animator.removeAllBehaviors()
                 
                 var gravity = UIGravityBehavior(items: [dialogView])
@@ -154,29 +168,34 @@ class Home: UIViewController {
                 animator.addBehavior(gravity)
                 
                 delay(0.3) {
-                self.refreshView()
+                    self.refreshView()
                 }
             }
             
-            else if translation.x > 140 {
-                animator.removeAllBehaviors()
-                
-                var gravity = UIGravityBehavior(items: [dialogView])
-                gravity.gravityDirection = CGVectorMake(10, 0)
-                animator.addBehavior(gravity)
-                
-                delay(0.3) {
-                    self.refreshView()
-                }
-
+            if translation.x > 140 {
+                snapBehavior = UISnapBehavior(item: myView, snapToPoint: view.center)
+                animator.addBehavior(snapBehavior)
+                println("opgeslagen")
+                UIView.animateWithDuration(0.8, animations: {
+                    self.newsAlert.alpha = 1.0
+                })
                 
             }
-        }    }
-   
+            
+            
+        }
+    }
     
     
-    // delete and resfresh button 
     @IBAction func saveNewsItem(sender: AnyObject) {
+        println("opgeslagen")
+        UIView.animateWithDuration(0.5, animations: {
+            self.newsAlert.alpha = 1.0
+        })
+    }
+    
+    // delete and resfresh button
+    @IBAction func deleteNewsItem(sender: AnyObject) {
         
         animator.removeAllBehaviors()
         
@@ -189,7 +208,7 @@ class Home: UIViewController {
         }
         
     }
-
+    
     
     
     func refreshView() {
@@ -208,7 +227,7 @@ class Home: UIViewController {
         animator.removeAllBehaviors()
         
         snapBehavior = UISnapBehavior(item: dialogView, snapToPoint: view.center)
-//       attachmentBehavior.anchorPoint = view.center
+        //       attachmentBehavior.anchorPoint = view.center
         
         dialogView.center = view.center
         viewDidAppear(true)

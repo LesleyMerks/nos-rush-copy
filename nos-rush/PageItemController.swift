@@ -31,7 +31,7 @@ class PageItemController: UIViewController {
         if(imageName == "Intro3.png") {
             SkipButton.hidden = false
         }
-       
+        
     }
     @IBOutlet var contentText: UIView!
     
