@@ -38,10 +38,11 @@ class Detail: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         navigationController!.navigationBar.shadowImage = UIImage()
         navigationController!.navigationBar.translucent = true
+        
+        navigationController!.hidesBarsOnSwipe = true
         
         // set the content size to be the size our our whole frame
         self.scrollView.contentSize = self.scrollView.frame.size;

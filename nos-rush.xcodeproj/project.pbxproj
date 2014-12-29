@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36411AE01A514D0C00378DF5 /* archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36411ADF1A514D0C00378DF5 /* archive.swift */; };
 		3643C8991A20D10800B41667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643C8981A20D10800B41667 /* AppDelegate.swift */; };
 		3643C89E1A20D10800B41667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3643C89C1A20D10800B41667 /* Main.storyboard */; };
 		3643C8A01A20D10800B41667 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3643C89F1A20D10800B41667 /* Images.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36411ADF1A514D0C00378DF5 /* archive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = archive.swift; sourceTree = "<group>"; };
 		3643C8931A20D10800B41667 /* nos-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nos-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3643C8971A20D10800B41667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3643C8981A20D10800B41667 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				36BDC18D1A45EF6F005BF5DA /* category-settings.swift */,
+				36411ADF1A514D0C00378DF5 /* archive.swift */,
 				36BDC18B1A45EF4D005BF5DA /* ViewController.swift */,
 				36E5604D1A43848F008FBF77 /* Detail.swift */,
 				36E5604B1A438466008FBF77 /* Home.swift */,
@@ -277,6 +280,7 @@
 				36E5604C1A438466008FBF77 /* Home.swift in Sources */,
 				36EE6F621A28A352008F34C9 /* customTabController.swift in Sources */,
 				36E560461A43839B008FBF77 /* newsCell.swift in Sources */,
+				36411AE01A514D0C00378DF5 /* archive.swift in Sources */,
 				36E5604E1A43848F008FBF77 /* Detail.swift in Sources */,
 				36BDC18E1A45EF6F005BF5DA /* category-settings.swift in Sources */,
 				36E560561A43850C008FBF77 /* SpringAnimation.swift in Sources */,

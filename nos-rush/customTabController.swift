@@ -23,8 +23,8 @@ class customTabController: UITabBarController  {
         let tabItems = tabBar.items as [UITabBarItem]
         tabItems[0].title = "First"
 
-       var cameraTab : UITabBarItem = self.tabBar.items![1] as UITabBarItem
-       cameraTab.badgeValue = "4"
+//       var cameraTab : UITabBarItem = self.tabBar.items![1] as UITabBarItem
+//       cameraTab.badgeValue = "4"
         
             
             

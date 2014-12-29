@@ -29,13 +29,18 @@ class Home: UIViewController {
     @IBOutlet weak var newsIndex: UILabel!
     @IBOutlet weak var newsTotal: UILabel!
     
+    @IBOutlet weak var archiveNews: UIButton!
     
+    @IBOutlet weak var ignoreNews: UIButton!
     
-    @IBAction func saveItem(sender: AnyObject) {
+    @IBAction func modifyArray(sender: AnyObject) {
         
         
-        
+        data[number].updateValue("hallo", forKey: "titel")
+        println(data[number]["titel"])
+        viewDidAppear(true)
     }
+   
     
     @IBAction func imageButtonDidPress(sender: AnyObject) {
         
@@ -49,6 +54,9 @@ class Home: UIViewController {
             let controller = segue.destinationViewController as Detail
             controller.data = data
             controller.number = number
+
+            controller.hidesBottomBarWhenPushed = true
+             controller.navigationItem.hidesBackButton = true
         }
     }
     
@@ -81,7 +89,7 @@ class Home: UIViewController {
         
         animator = UIDynamicAnimator(referenceView: view)
         
-        dialogView.alpha = 0
+        dialogView.alpha = 1
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -90,8 +98,16 @@ class Home: UIViewController {
         //        UIView.animateWithDuration(1.5, animations: {
         //            self.dialogView.alpha = 1.0
         //                    })
-        dialogView.alpha = 0
+        dialogView.alpha = 1
         newsAlert.alpha = 0
+        
+        ignoreNews.frame.size.width = 160
+        ignoreNews.setTitle("Volgen", forState: UIControlState.Normal)
+        
+        archiveNews.layer.zPosition = 0;
+        archiveNews.frame.origin.x = 160
+        archiveNews.frame.size.width = 160
+        archiveNews.setTitle("Archiveren", forState: UIControlState.Normal)
         
         //
         let scale = CGAffineTransformMakeScale(1.0, 1.0)
@@ -104,9 +120,7 @@ class Home: UIViewController {
             self.dialogView.transform = CGAffineTransformConcat(scale, translate)
             //            self.dialogView.alpha = 1
         }
-        UIView.animateWithDuration(0.8, animations: {
-            self.dialogView.alpha = 1.0
-        })
+        
         //
         //println(data.count)
         //         println(number)
@@ -139,6 +153,7 @@ class Home: UIViewController {
         let boxLocation = sender.locationInView(dialogView)
         let translation = sender.translationInView(view)
         
+      
         
         
         if sender.state == UIGestureRecognizerState.Began {
@@ -152,7 +167,39 @@ class Home: UIViewController {
         }
         else if sender.state == UIGestureRecognizerState.Changed {
             attachmentBehavior.anchorPoint = location
-        }
+//            println(translation.x)
+            var savebuttonLocation = translation.x + 160
+            var deltebuttonLocationString = translation.x.description
+            var deltebuttonLocation = translation.x
+//            println(deltebuttonLocation)
+            let newString = deltebuttonLocationString.stringByReplacingOccurrencesOfString("-", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            
+            var floatValue = CGFloat((newString as NSString).floatValue)
+            if(translation.x < 1) {
+                archiveNews.frame.origin.x = deltebuttonLocation + 160
+                archiveNews.frame.size.width = floatValue + 160
+                archiveNews.layer.zPosition = 1;
+//                println(savebuttonLocation)
+                if(archiveNews.frame.size.width > 319 ) {
+                    archiveNews.frame.origin.x = 0
+                    archiveNews.frame.size.width = 320
+                    archiveNews.setTitle("Gearchiveerd", forState: UIControlState.Normal)
+                }
+            }
+            
+            
+            if translation.x > 1 {
+                ignoreNews.frame.size.width = savebuttonLocation
+                
+            }
+                if (savebuttonLocation > 320) {
+                    ignoreNews.frame.size.width = 320
+                    ignoreNews.setTitle("Opgeslagen", forState: UIControlState.Normal)
+                }
+                if(translation.x == -1 ){
+                    ignoreNews.frame.size.width = 160
+                }
+            }
         else if sender.state == UIGestureRecognizerState.Ended {
             animator.removeBehavior(attachmentBehavior)
             
@@ -160,9 +207,9 @@ class Home: UIViewController {
             animator.addBehavior(snapBehavior)
             
             let translation = sender.translationInView(view)
-            if translation.x < 140 {
+            if translation.x <= -40 {
                 animator.removeAllBehaviors()
-                
+            
                 var gravity = UIGravityBehavior(items: [dialogView])
                 gravity.gravityDirection = CGVectorMake(-4, 10)
                 animator.addBehavior(gravity)
@@ -171,47 +218,49 @@ class Home: UIViewController {
                     self.refreshView()
                 }
             }
-            
-            if translation.x > 140 {
-                snapBehavior = UISnapBehavior(item: myView, snapToPoint: view.center)
-                animator.addBehavior(snapBehavior)
-                println("opgeslagen")
-                UIView.animateWithDuration(0.8, animations: {
-                    self.newsAlert.alpha = 1.0
-                })
+  
+             if translation.x > 140 {
+                animator.removeAllBehaviors()
+                var gravity = UIGravityBehavior(items: [dialogView])
+                gravity.gravityDirection = CGVectorMake(4, 10)
+                animator.addBehavior(gravity)
+                
+                delay(0.3) {
+                    self.refreshView()
+                }
                 
             }
             
             
+            
+            
         }
     }
     
     
-    @IBAction func saveNewsItem(sender: AnyObject) {
-        println("opgeslagen")
-        UIView.animateWithDuration(0.5, animations: {
-            self.newsAlert.alpha = 1.0
-        })
-    }
+//    @IBAction func saveNewsItem(sender: AnyObject) {
+//        println("opgeslagen")
+//        UIView.animateWithDuration(0.5, animations: {
+//            self.newsAlert.alpha = 1.0
+//        })
+//    }
+//    
+//    // delete and resfresh button
+//    @IBAction func deleteNewsItem(sender: AnyObject) {
+//        
+//        animator.removeAllBehaviors()
+//        
+//        var gravity = UIGravityBehavior(items: [dialogView])
+//        gravity.gravityDirection = CGVectorMake(10, 0)
+//        animator.addBehavior(gravity)
+//        
+//        delay(0.3) {
+//            self.refreshView()
+//        }
+//        
+//    }
     
-    // delete and resfresh button
-    @IBAction func deleteNewsItem(sender: AnyObject) {
-        
-        animator.removeAllBehaviors()
-        
-        var gravity = UIGravityBehavior(items: [dialogView])
-        gravity.gravityDirection = CGVectorMake(10, 0)
-        animator.addBehavior(gravity)
-        
-        delay(0.3) {
-            self.refreshView()
-        }
-        
-    }
-    
-    
-    
-    func refreshView() {
+       func refreshView() {
         
         nextbackground++
         
@@ -230,6 +279,9 @@ class Home: UIViewController {
         //       attachmentBehavior.anchorPoint = view.center
         
         dialogView.center = view.center
+        UIView.animateWithDuration(0.8, animations: {
+            self.dialogView.alpha = 1.0
+        })
         viewDidAppear(true)
     }
     
