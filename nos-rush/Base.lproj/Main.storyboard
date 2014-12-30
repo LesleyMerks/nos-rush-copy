@@ -53,7 +53,8 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="jUN-9w-H1P" kind="push" identifier="HomeToDetail" id="iVa-9C-bC7"/>
+                                                    <action selector="imageButtonDidPress:" destination="lqj-ML-Oim" eventType="touchUpInside" id="cKC-Nk-sG8"/>
+                                                    <segue destination="jUN-9w-H1P" kind="modal" identifier="HomeToDetail" id="iVa-9C-bC7"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="78z-eN-rzR">
@@ -185,9 +186,9 @@
         <!--Detail-->
         <scene sceneID="cNr-79-AAK">
             <objects>
-                <viewController id="jUN-9w-H1P" customClass="Detail" customModule="nos_rush" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="jUN-9w-H1P" customClass="Detail" customModule="nos_rush" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nBf-8K-RrW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="751"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="AGw-KE-JhY">
@@ -195,21 +196,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KtE-MS-Rb9">
-                                        <rect key="frame" x="30" y="93" width="200" height="71"/>
+                                        <rect key="frame" x="30" y="193" width="200" height="71"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" red="0.17254901959999999" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="textColor" red="0.17254901959999999" green="0.71372549019999998" blue="0.71372549019999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cO4-qp-MES">
-                                        <rect key="frame" x="30" y="237" width="262" height="352"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Duitsevrouw" id="NLE-zt-Z8c">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NLE-zt-Z8c">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="214"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
@@ -235,6 +229,14 @@
                                             <action selector="deleteNewsItem:" destination="lqj-ML-Oim" eventType="touchUpInside" id="Q0N-Yn-J1u"/>
                                         </connections>
                                     </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="cO4-qp-MES">
+                                        <rect key="frame" x="30" y="297" width="262" height="352"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -247,6 +249,7 @@
                         <outlet property="newsContent" destination="cO4-qp-MES" id="qJX-82-qnD"/>
                         <outlet property="newsTitle" destination="KtE-MS-Rb9" id="Yk6-TN-TgQ"/>
                         <outlet property="scrollView" destination="AGw-KE-JhY" id="lfD-a0-geF"/>
+                        <segue destination="lqj-ML-Oim" kind="modal" identifier="detailToHome" id="MDb-ax-ZGK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRU-Jd-mTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -448,7 +451,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Mqq-wl-K2E" kind="relationship" relationship="rootViewController" id="lYe-eB-TYW"/>
+                        <segue destination="OBY-tm-bGY" kind="relationship" relationship="rootViewController" id="K4I-a8-SGY"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyO-GF-7ih" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -460,7 +463,7 @@
             <objects>
                 <tableViewController id="Mqq-wl-K2E" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HBj-0I-sjl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -651,9 +654,6 @@
                                             </subviews>
                                             <color key="tintColor" red="1" green="0.1100805916" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="OBY-tm-bGY" kind="push" id="2Zb-Su-AjN"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -678,7 +678,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="7AY-ed-lcA">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="archivecell" id="7AY-ed-lcA">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="archivecell" tableViewCell="7AY-ed-lcA" id="Uis-WX-XAa">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -725,4 +725,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="RRw-ef-d0m"/>
+    </inferredMetricsTieBreakers>
 </document>

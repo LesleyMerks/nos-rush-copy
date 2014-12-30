@@ -36,8 +36,8 @@ class Home: UIViewController {
     @IBAction func modifyArray(sender: AnyObject) {
         
         
-        data[number].updateValue("hallo", forKey: "titel")
-        println(data[number]["titel"])
+        data[number].updateValue("ja", forKey: "opgeslagen")
+        println(data[number]["opgeslagen"])
         viewDidAppear(true)
     }
    
@@ -45,21 +45,24 @@ class Home: UIViewController {
     @IBAction func imageButtonDidPress(sender: AnyObject) {
         
         
-        self.performSegueWithIdentifier("homeToDetail", sender: self)
+        performSegueWithIdentifier("HomeToDetail", sender: self)
         
     }
     
+    
+ 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "homeToDetail" {
+        if segue.identifier == "HomeToDetail" {
             let controller = segue.destinationViewController as Detail
             controller.data = data
             controller.number = number
 
-            controller.hidesBottomBarWhenPushed = true
-             controller.navigationItem.hidesBackButton = true
+//            controller.hidesBottomBarWhenPushed = true
+//             controller.navigationItem.hidesBackButton = true
         }
     }
     
+      
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -79,10 +82,10 @@ class Home: UIViewController {
         super.viewDidLoad()
         
         
-        
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.translucent = true
+//        
+//        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        navigationController!.navigationBar.shadowImage = UIImage()
+//        navigationController!.navigationBar.translucent = true
         
         insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
         //        insertBlurView(headerView, UIBlurEffectStyle.Dark)

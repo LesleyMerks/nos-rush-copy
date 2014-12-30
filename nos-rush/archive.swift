@@ -10,14 +10,29 @@ import UIKit
 class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     
-    var data = getData()
-    var number = 0
+    
+var data = Array<Dictionary<String,String>>()
+    
     
 
     
     override func viewDidLoad() {
-       
-       
+       super.viewDidLoad()
+        
+        for myValue  in  data {
+            if myValue["titel"] == "IS slaat weer toe"{
+//                
+//                 self.data = myValue
+//                println(data)
+                
+             
+                
+            }
+            else {
+                println ("neat good")
+            }
+        }
+        
         //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
 //        
 //        
@@ -37,19 +52,27 @@ class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDeleg
         
     }
     
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//            return candies.count
-//      
-//    }
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("archivecell") as UITableViewCell        
-//    
-//
-//        cell.textLabel?.text = "hallo"
-//       return cell
-//    }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+            return data.count
+      
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+         var cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier("archivecell") as UITableViewCell        
+         let row = indexPath.row
+        let myRowKey = data[row]["titel"]
+        let savedNews  = data[row]["opgeslagen"]
+        println(savedNews)
+        if savedNews == "ja"{
+            cell.textLabel?.text = myRowKey
+        }
+        else {
+            
+        }
+        return cell
+    }
     
 //delet row on swipe right
 //    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
