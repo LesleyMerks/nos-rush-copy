@@ -9,7 +9,7 @@ import UIKit
 
 class CandyTableViewController : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
-    
+    var data = Array<Dictionary<String,String>>()
     var candies = [Candy]()
     
     var filteredCandies = [Candy]()

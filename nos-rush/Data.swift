@@ -16,7 +16,7 @@ func getData() -> Array<Dictionary<String,String>> {
             "subtext": "Dit is een ondertitel bla bla bla",
             "image" : "60SEC.png",
             "datum": "Dinsdag 14 October",
-            "opgeslagen": "nee",
+            "opgeslagen": "",
             "categorie" : "algemeen",
             "text"  : "You guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehance"
         ],
@@ -25,7 +25,7 @@ func getData() -> Array<Dictionary<String,String>> {
             "subtext": "Dit is een ondertitel",
             "image" : "Duitsevrouw.png",
             "datum": "avatar",
-            "opgeslagen": "nee",
+            "opgeslagen": "",
             "categorie" : "algemeen",
             "text"  : "You guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehance"
         ],
@@ -34,7 +34,7 @@ func getData() -> Array<Dictionary<String,String>> {
             "subtext": "Dit is een ondertitel",
             "image" : "Ebola.png",
             "datum": "avatar",
-            "opgeslagen": "nee",
+            "opgeslagen": "",
             "categorie" : "algemeen",
             "text"  : "You guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehance"
             
@@ -45,7 +45,7 @@ func getData() -> Array<Dictionary<String,String>> {
             "image" : "Maxima.png",
             "datum": "avatar",
             "categorie" : "algemeen",
-            "opgeslagen": "nee",
+            "opgeslagen": "",
             "text"  : "You guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehanceYou guys, the new How To Draw: drawing and sketching objects and environments from your imagination book by S. Robertson is just amazing! I spent the whole weekend gobbling it up and of course I couldn't help but take the watercolors myself! :)\n\nFill up the gas tank and go check out the attachment!\n\nBehance"
         ],
     ]

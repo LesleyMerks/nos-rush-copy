@@ -15,7 +15,7 @@ class customTabController: UITabBarController, UITabBarControllerDelegate  {
     
        override func viewDidLoad() {
         super.viewDidLoad()
-        self.delegate = self
+//        self.delegate = self
         
       
                 // load second tabbarview
@@ -41,8 +41,4 @@ class customTabController: UITabBarController, UITabBarControllerDelegate  {
 //            }
 //    }
     
-    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
-        var logView = viewControllers![1] as Archive
-        println(logView)
     }
-}

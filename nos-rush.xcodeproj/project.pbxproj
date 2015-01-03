@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		36178E821A534BB400DD6CEF /* arhiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36178E811A534BB400DD6CEF /* arhiveCell.swift */; };
 		36411AE01A514D0C00378DF5 /* archive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36411ADF1A514D0C00378DF5 /* archive.swift */; };
 		3643C8991A20D10800B41667 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643C8981A20D10800B41667 /* AppDelegate.swift */; };
 		3643C89E1A20D10800B41667 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3643C89C1A20D10800B41667 /* Main.storyboard */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		36178E811A534BB400DD6CEF /* arhiveCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = arhiveCell.swift; sourceTree = "<group>"; };
 		36411ADF1A514D0C00378DF5 /* archive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = archive.swift; sourceTree = "<group>"; };
 		3643C8931A20D10800B41667 /* nos-rush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nos-rush.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3643C8971A20D10800B41667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				36411ADF1A514D0C00378DF5 /* archive.swift */,
 				36BDC18B1A45EF4D005BF5DA /* ViewController.swift */,
 				36E5604D1A43848F008FBF77 /* Detail.swift */,
+				36178E811A534BB400DD6CEF /* arhiveCell.swift */,
 				36E5604B1A438466008FBF77 /* Home.swift */,
 				36E560491A438430008FBF77 /* pageItemController.swift */,
 				367620201A20F40900C2A3A8 /* wall */,
@@ -272,6 +275,7 @@
 			files = (
 				36BDC18C1A45EF4D005BF5DA /* ViewController.swift in Sources */,
 				36E560521A4384DC008FBF77 /* Data.swift in Sources */,
+				36178E821A534BB400DD6CEF /* arhiveCell.swift in Sources */,
 				36E560501A4384C4008FBF77 /* BlurView.swift in Sources */,
 				36E560541A4384F4008FBF77 /* Misc.swift in Sources */,
 				36E560421A438306008FBF77 /* Candy.swift in Sources */,

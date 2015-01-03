@@ -9,7 +9,7 @@
 import UIKit
 import MediaPlayer
 
-class Home: UIViewController {
+class Home: UIViewController,UITabBarControllerDelegate {
     
     var data = getData()
     
@@ -80,12 +80,12 @@ class Home: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.tabBarController?.delegate = self
         
 //        
-//        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        navigationController!.navigationBar.shadowImage = UIImage()
-//        navigationController!.navigationBar.translucent = true
+        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController!.navigationBar.shadowImage = UIImage()
+        navigationController!.navigationBar.translucent = true
         
         insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
         //        insertBlurView(headerView, UIBlurEffectStyle.Dark)
@@ -204,31 +204,54 @@ class Home: UIViewController {
                 }
             }
         else if sender.state == UIGestureRecognizerState.Ended {
+            
+            UIView.animateWithDuration(0.5) {
+                self.ignoreNews.frame.size.width = 160
+
+
+                self.archiveNews.frame.origin.x = 160
+                self.archiveNews.frame.size.width = 160
+
+
+                delay(0.5) {
+                    self.archiveNews.layer.zPosition = 0;
+                }
+                
+                delay(0.3){
+                    self.archiveNews.setTitle("Archiveren", forState: UIControlState.Normal)
+                    self.ignoreNews.setTitle("Volgen", forState: UIControlState.Normal)
+                }
+        }
+
+        
+            
+           
             animator.removeBehavior(attachmentBehavior)
             
             snapBehavior = UISnapBehavior(item: myView, snapToPoint: view.center)
             animator.addBehavior(snapBehavior)
             
             let translation = sender.translationInView(view)
-            if translation.x <= -40 {
+            if translation.x <= -160 {
                 animator.removeAllBehaviors()
             
                 var gravity = UIGravityBehavior(items: [dialogView])
                 gravity.gravityDirection = CGVectorMake(-4, 10)
                 animator.addBehavior(gravity)
-                
-                delay(0.3) {
+                        data[number].updateValue("ja", forKey: "opgeslagen")
+                        
+                delay(0.8) {
                     self.refreshView()
                 }
             }
   
-             if translation.x > 140 {
+             if translation.x > 160 {
                 animator.removeAllBehaviors()
                 var gravity = UIGravityBehavior(items: [dialogView])
                 gravity.gravityDirection = CGVectorMake(4, 10)
                 animator.addBehavior(gravity)
                 
-                delay(0.3) {
+                delay(0.8) {
                     self.refreshView()
                 }
                 
@@ -240,7 +263,29 @@ class Home: UIViewController {
         }
     }
     
-    
+    func tabBarController(tabBarController: UITabBarController, didSelectViewController viewController: UIViewController) {
+        
+        println("Push data \(viewController)")
+        
+        if (viewController .isKindOfClass(UINavigationController))
+        {
+            let navController = viewController as UINavigationController
+            
+            if (navController.viewControllers[0] .isKindOfClass(Archive))
+            {
+                let controller = navController.viewControllers[0] as Archive
+                controller.data = data;
+
+            }
+            
+            if (navController.viewControllers[0] .isKindOfClass(CandyTableViewController))
+            {
+                let controller = navController.viewControllers[0] as CandyTableViewController
+                controller.data = data;
+                
+            }
+        }
+    }
 //    @IBAction func saveNewsItem(sender: AnyObject) {
 //        println("opgeslagen")
 //        UIView.animateWithDuration(0.5, animations: {
