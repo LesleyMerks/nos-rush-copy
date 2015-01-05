@@ -1,104 +1,94 @@
-//
-//  ViewController.swift
-//  Paging_Swift
-//
-//  Created by Olga Dalton on 26/10/14.
-//  Copyright (c) 2014 swiftiostutorials.com. All rights reserved.
-//
 
 import UIKit
 
-class ViewController: UIViewController, UIPageViewControllerDataSource {
+class ViewController: UIViewController, UIPageViewControllerDataSource
+{
+    var pageViewController : UIPageViewController?
+    var pageTitles : Array<String> = ["God vs Man God vs Man God vs Man God vs Man God vs Man", "Cool Breeze", "Fire Sky"]
+    var pageImages : Array<String> = ["60SEC.png", "60SEC.png", "60SEC.png"]
+    var currentIndex : Int = 0
     
-    // MARK: - Variables
-    private var pageViewController: UIPageViewController?
-    
-    // Initialize it right away here
-    private let contentImages = ["Intro1.png",
-        "Intro2.png",
-        "Intro3.png"];
-    
-    // MARK: - View Lifecycle
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        createPageViewController()
-        setupPageControl()
-    }
-    
-    private func createPageViewController() {
         
-        let pageController = self.storyboard!.instantiateViewControllerWithIdentifier("PageController") as UIPageViewController
-        pageController.dataSource = self
+        pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+        pageViewController!.dataSource = self
         
-        if contentImages.count > 0 {
-            let firstController = getItemController(0)!
-            let startingViewControllers: NSArray = [firstController]
-            pageController.setViewControllers(startingViewControllers, direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
-        }
+        let startingViewController: InstructionView = viewControllerAtIndex(0)!
+        let viewControllers: NSArray = [startingViewController]
+        pageViewController!.setViewControllers(viewControllers, direction: .Forward, animated: false, completion: nil)
+        pageViewController!.view.frame = CGRectMake(0, 0, view.frame.size.width, view.frame.size.height);
         
-        pageViewController = pageController
         addChildViewController(pageViewController!)
-        self.view.addSubview(pageViewController!.view)
+        view.addSubview(pageViewController!.view)
         pageViewController!.didMoveToParentViewController(self)
     }
     
-    private func setupPageControl() {
-        let appearance = UIPageControl.appearance()
-        appearance.pageIndicatorTintColor = UIColor.grayColor()
-        appearance.currentPageIndicatorTintColor = UIColor.whiteColor()
-        appearance.backgroundColor = UIColor.redColor()
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
     }
     
-    // MARK: - UIPageViewControllerDataSource
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController?
+    {
+        var index = (viewController as InstructionView).pageIndex
         
-        let itemController = viewController as PageItemController
-        
-        if itemController.itemIndex > 0 {
-            return getItemController(itemController.itemIndex-1)
+        if (index == 0) || (index == NSNotFound) {
+            return nil
         }
         
-        return nil
+        index--
+        
+        return viewControllerAtIndex(index)
     }
     
-    
-    
-    
-    
-    
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
+    {
+        var index = (viewController as InstructionView).pageIndex
         
-        let itemController = viewController as PageItemController
-        
-        if itemController.itemIndex+1 < contentImages.count {
-            return getItemController(itemController.itemIndex+1)
+        if index == NSNotFound {
+            return nil
         }
         
-        return nil
-    }
-    
-    private func getItemController(itemIndex: Int) -> PageItemController? {
+        index++
         
-        if itemIndex < contentImages.count {
-            let pageItemController = self.storyboard!.instantiateViewControllerWithIdentifier("ItemController") as PageItemController
-            pageItemController.itemIndex = itemIndex
-            pageItemController.imageName = contentImages[itemIndex]
-            return pageItemController
+        if (index == self.pageTitles.count) {
+            return nil
         }
         
-        return nil
+        if (index == 3) {
+            println("dit is de laatste pagina")
+        }
+        
+        return viewControllerAtIndex(index)
     }
     
-    // MARK: - Page Indicator
-    
-    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
-        return contentImages.count
+    func viewControllerAtIndex(index: Int) -> InstructionView?
+    {
+        if self.pageTitles.count == 0 || index >= self.pageTitles.count
+        {
+            return nil
+        }
+        
+        // Create a new view controller and pass suitable data.
+        let pageContentViewController = InstructionView()
+        pageContentViewController.imageFile = pageImages[index]
+        pageContentViewController.titleText = pageTitles[index]
+        pageContentViewController.pageIndex = index
+        currentIndex = index
+        
+        return pageContentViewController
     }
     
-    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
+        return self.pageTitles.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int
+    {
         return 0
     }
     
 }
-

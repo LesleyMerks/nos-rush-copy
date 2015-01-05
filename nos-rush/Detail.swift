@@ -26,24 +26,20 @@ class Detail: UIViewController {
 //            performSegueWithIdentifier("detailToHome", sender: sender)
 //        }
     
-       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-            if segue.identifier == "detailToHome" {
-                let controller = segue.destinationViewController as Home
-                controller.data = data
-                controller.number = number
-                let destinationTitle = self.data[number]["titel"]!
-                controller.title = destinationTitle
-            }
-        }
+//       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+//            if segue.identifier == "detailToHome" {
+//                let controller = segue.destinationViewController as Home
+//                controller.data = data
+//                controller.number = number
+//                let destinationTitle = self.data[number]["titel"]!
+//                controller.title = destinationTitle
+//            }
+//        }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println(data)
-//        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        navigationController!.navigationBar.shadowImage = UIImage()
-//        navigationController!.navigationBar.translucent = true
-//        
-//        navigationController!.hidesBarsOnSwipe = true
+
+
         
         // set the content size to be the size our our whole frame
         self.scrollView.contentSize = self.scrollView.frame.size;
@@ -69,8 +65,6 @@ class Detail: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         //         newsContent.bounds.size = newsContent.contentSize
-        
-        
         
         
         //        backButton.alpha = 1

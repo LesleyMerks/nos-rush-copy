@@ -10,10 +10,9 @@ import UIKit
 class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
 
-    
-
+   
 var data = Array<Dictionary<String,String>>()
-    let test = Array<Dictionary<String,String>>()
+    var test = Array<Dictionary<String,String>>()
     override func viewDidLoad() {
        super.viewDidLoad()
         
@@ -23,17 +22,17 @@ var data = Array<Dictionary<String,String>>()
             
             
             if data[index]["opgeslagen"] == "" {
-            var titel  = data[index]
-            var test = titel["titel"]
-               
-
+            let titel  = data[index]
+            var test = titel
+             
+            
                 
                
             }
            
         }
       
-        
+       
         
       
         

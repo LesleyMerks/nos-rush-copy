@@ -25,7 +25,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
     @IBOutlet weak var newsSubText: UILabel!
     @IBOutlet weak var newsDate: UILabel!
     
-    @IBOutlet weak var newsAlert: UILabel!
+
     @IBOutlet weak var newsIndex: UILabel!
     @IBOutlet weak var newsTotal: UILabel!
     
@@ -62,7 +62,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
         }
     }
     
-      
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
@@ -82,10 +82,10 @@ class Home: UIViewController,UITabBarControllerDelegate {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
         
-//        
-        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController!.navigationBar.shadowImage = UIImage()
-        navigationController!.navigationBar.translucent = true
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.translucent = true
         
         insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
         //        insertBlurView(headerView, UIBlurEffectStyle.Dark)
@@ -93,6 +93,17 @@ class Home: UIViewController,UITabBarControllerDelegate {
         animator = UIDynamicAnimator(referenceView: view)
         
         dialogView.alpha = 1
+        
+        newsIndex.text = String(number + 1 )
+        newsTotal.text = String(data.count )
+        newsTitel.text = data[number]["titel"]
+        newsCategory.text = data[number]["categorie"]
+        newsDate.text = data[number]["datum"]
+        newsSubText.text = data[number]["subtext"]
+        backgroundImageView.image = UIImage(named: data[nextbackground]["image"]!)
+        imageButton.setImage(UIImage(named: data[number]["image"]!), forState: UIControlState.Normal)
+        archiveNews.setTitle("Archiveren", forState: UIControlState.Normal)
+        ignoreNews.setTitle("Volgen", forState: UIControlState.Normal)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -102,15 +113,15 @@ class Home: UIViewController,UITabBarControllerDelegate {
         //            self.dialogView.alpha = 1.0
         //                    })
         dialogView.alpha = 1
-        newsAlert.alpha = 0
+        
         
         ignoreNews.frame.size.width = 160
-        ignoreNews.setTitle("Volgen", forState: UIControlState.Normal)
+
         
         archiveNews.layer.zPosition = 0;
         archiveNews.frame.origin.x = 160
         archiveNews.frame.size.width = 160
-        archiveNews.setTitle("Archiveren", forState: UIControlState.Normal)
+        
         
         //
         let scale = CGAffineTransformMakeScale(1.0, 1.0)
@@ -129,14 +140,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
         //         println(number)
         
         
-        newsIndex.text = String(number + 1 )
-        newsTotal.text = String(data.count )
-        newsTitel.text = data[number]["titel"]
-        newsCategory.text = data[number]["categorie"]
-        newsDate.text = data[number]["datum"]
-        newsSubText.text = data[number]["subtext"]
-        backgroundImageView.image = UIImage(named: data[nextbackground]["image"]!)
-        imageButton.setImage(UIImage(named: data[number]["image"]!), forState: UIControlState.Normal)
+       
         //        backgroundImageView.image = UIImage(named: data[number]["image"]!)
         
     }
