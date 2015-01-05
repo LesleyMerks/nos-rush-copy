@@ -7,18 +7,30 @@ class InstructionView: UIViewController
     var pageIndex : Int = 0
     var titleText : String = ""
     var imageFile : String = ""
+    var titleCaption : String = ""
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
 //        view.backgroundColor = UIColor(patternImage: UIImage(named: imageFile)!)
-        
-        let imageView = UIImageView(frame: CGRectMake(0, 0, 320, 300) )
+        setupPageControl()
+        let imageView = UIImageView(frame: CGRectMake(70, 40, 140, 300) )
         imageView.image=UIImage(named: imageFile)
+        imageView.contentMode = .ScaleAspectFill
+
+        
         view.addSubview(imageView)
         
-        let label = UILabel(frame: CGRectMake(10, 40, 300, 200))
+        let titleLable =  UILabel(frame: CGRectMake(10, 360, 300, 90))
+        titleLable.textColor = UIColor.blackColor()
+        titleLable.text = titleCaption
+        titleLable.textAlignment = .Center
+        titleLable.numberOfLines = 0
+        titleLable.font = UIFont(name: titleLable.font.fontName, size: 24)
+        view.addSubview(titleLable)
+        
+        let label = UILabel(frame: CGRectMake(10, 360, 300, 200))
         label.textColor = UIColor.blackColor()
         label.text = titleText
         label.numberOfLines = 0
@@ -37,6 +49,13 @@ class InstructionView: UIViewController
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
+    }
+    // create page contol buttons
+    private func setupPageControl() {
+        let appearance = UIPageControl.appearance()
+        appearance.pageIndicatorTintColor = UIColor.whiteColor()
+        appearance.currentPageIndicatorTintColor = UIColor.redColor()
+        appearance.backgroundColor = UIColor.lightGrayColor()
     }
     
 }

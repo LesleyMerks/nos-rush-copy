@@ -20,7 +20,6 @@
 		36E560421A438306008FBF77 /* Candy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E560411A438306008FBF77 /* Candy.swift */; };
 		36E560441A438378008FBF77 /* CandyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E560431A438378008FBF77 /* CandyTableViewController.swift */; };
 		36E560461A43839B008FBF77 /* newsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E560451A43839B008FBF77 /* newsCell.swift */; };
-		36E5604A1A438430008FBF77 /* pageItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E560491A438430008FBF77 /* pageItemController.swift */; };
 		36E5604C1A438466008FBF77 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5604B1A438466008FBF77 /* Home.swift */; };
 		36E5604E1A43848F008FBF77 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5604D1A43848F008FBF77 /* Detail.swift */; };
 		36E560501A4384C4008FBF77 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36E5604F1A4384C4008FBF77 /* BlurView.swift */; };
@@ -59,7 +58,6 @@
 		36E560411A438306008FBF77 /* Candy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Candy.swift; sourceTree = "<group>"; };
 		36E560431A438378008FBF77 /* CandyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CandyTableViewController.swift; sourceTree = "<group>"; };
 		36E560451A43839B008FBF77 /* newsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = newsCell.swift; sourceTree = "<group>"; };
-		36E560491A438430008FBF77 /* pageItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pageItemController.swift; sourceTree = "<group>"; };
 		36E5604B1A438466008FBF77 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		36E5604D1A43848F008FBF77 /* Detail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		36E5604F1A4384C4008FBF77 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 				36E5604D1A43848F008FBF77 /* Detail.swift */,
 				36178E811A534BB400DD6CEF /* arhiveCell.swift */,
 				36E5604B1A438466008FBF77 /* Home.swift */,
-				36E560491A438430008FBF77 /* pageItemController.swift */,
 				367620201A20F40900C2A3A8 /* wall */,
 				3643C8BC1A20D16A00B41667 /* animate_data */,
 				3643C8981A20D10800B41667 /* AppDelegate.swift */,
@@ -284,7 +281,6 @@
 				36D808CC1A5A95170000CB85 /* InstructionView.swift in Sources */,
 				36E560421A438306008FBF77 /* Candy.swift in Sources */,
 				36EC16D01A2F257200D57621 /* wallDetail.swift in Sources */,
-				36E5604A1A438430008FBF77 /* pageItemController.swift in Sources */,
 				36E5604C1A438466008FBF77 /* Home.swift in Sources */,
 				36EE6F621A28A352008F34C9 /* customTabController.swift in Sources */,
 				36E560461A43839B008FBF77 /* newsCell.swift in Sources */,

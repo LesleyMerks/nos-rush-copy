@@ -21,7 +21,7 @@
         <!--Custom Tab Controller-->
         <scene sceneID="wvS-sG-VYE">
             <objects>
-                <tabBarController id="opf-0o-brr" customClass="customTabController" customModule="nos_rush" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController hidesBottomBarWhenPushed="YES" id="opf-0o-brr" customClass="customTabController" customModule="nos_rush" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="Wbn-ML-URY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>

@@ -4,8 +4,9 @@ import UIKit
 class ViewController: UIViewController, UIPageViewControllerDataSource
 {
     var pageViewController : UIPageViewController?
-    var pageTitles : Array<String> = ["God vs Man God vs Man God vs Man God vs Man God vs Man", "Cool Breeze", "Fire Sky"]
-    var pageImages : Array<String> = ["60SEC.png", "60SEC.png", "60SEC.png"]
+    var pageContent : Array<String> = ["God vs Man God vs Man God vs Man God vs Man God vs Man", "Cool Breeze", "Fire Sky"]
+    var pageImages : Array<String> = ["intro2.png", "intro3.png", "intro3.png"]
+    var pageTitles : Array<String> = ["Swipe door het nieuws heen", "Lees berichten terug op jouw persoonlijke wall", "Volledig op de hoogte van het nieuws"]
     var currentIndex : Int = 0
     
     override func viewDidLoad()
@@ -14,6 +15,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource
         
         pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
         pageViewController!.dataSource = self
+
         
         let startingViewController: InstructionView = viewControllerAtIndex(0)!
         let viewControllers: NSArray = [startingViewController]
@@ -57,8 +59,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource
             return nil
         }
         
-        if (index == 3) {
-            println("dit is de laatste pagina")
+        if (index == 2) {
+            
         }
         
         return viewControllerAtIndex(index)
@@ -74,7 +76,8 @@ class ViewController: UIViewController, UIPageViewControllerDataSource
         // Create a new view controller and pass suitable data.
         let pageContentViewController = InstructionView()
         pageContentViewController.imageFile = pageImages[index]
-        pageContentViewController.titleText = pageTitles[index]
+        pageContentViewController.titleText = pageContent[index]
+        pageContentViewController.titleCaption = pageTitles[index]
         pageContentViewController.pageIndex = index
         currentIndex = index
         
@@ -90,5 +93,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource
     {
         return 0
     }
+    
+   
     
 }

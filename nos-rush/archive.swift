@@ -9,35 +9,33 @@ import UIKit
 
 class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
 
+ var data = Array<Dictionary<String,String>>()
+ var filteredArray = Array<Dictionary<String,String>>()
+    
+    func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<AnyObject> {
+        
+        var archivedItems:Array<AnyObject> = []
+        
+        for item: Dictionary<String, String> in originalData {
+            
+            let archived:String = item["opgeslagen"]!
+            
+            if archived == "ja" {
+                archivedItems.append(item)
+            }
+        }
+        
+        return archivedItems
+    }
 
    
-var data = Array<Dictionary<String,String>>()
-    var test = Array<Dictionary<String,String>>()
+
+ 
     override func viewDidLoad() {
        super.viewDidLoad()
         
-    
-        for var index:Int = 0 ; index < data.count ;index += 1{
-            
-            
-            
-            if data[index]["opgeslagen"] == "" {
-            let titel  = data[index]
-            var test = titel
-             
-            
-                
-               
-            }
-           
-        }
-      
-       
-        
-      
-        
-        
-        
+     
+        filteredArray = getArchivedItems(data)
         
         //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
 //        
@@ -60,29 +58,20 @@ var data = Array<Dictionary<String,String>>()
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(Bool())
-//        
-//        for myValue  in  data {
-//            if myValue["opgeslagen"] == "ja"{
-//                
-//                var data = myValue
-//                
-//                
-//                
-//            }
-//            else {
-//                println ("neat good")
-//            }
-//        }
+
+
                 self.tableView.reloadData()
         
         
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            println(test.count)
-            return test.count
+            println(filteredArray.count)
+            return filteredArray.count
       
     }
+    
+    
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
