@@ -45,11 +45,11 @@ class updateView: UIViewController
         
         let button = UIButton.buttonWithType(UIButtonType.System) as UIButton
         button.frame = CGRectMake(0, 0 , view.frame.width , view.frame.height)
-        button.backgroundColor = UIColor(red: 138/255.0, green: 181/255.0, blue: 91/255.0, alpha: 1)
+        button.backgroundColor = UIColor.clearColor()
         button.setTitle(titleText, forState: UIControlState.Normal)
-        button.addTarget(self, action: "Action:", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: "test", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
-        button.hidden = true
+        button.hidden = false
     }
     
     override func didReceiveMemoryWarning()
@@ -63,5 +63,9 @@ class updateView: UIViewController
         appearance.currentPageIndicatorTintColor = UIColor.redColor()
         appearance.backgroundColor = UIColor(rgba: "#e0e0e0")
     }
+    
+//    func test() {
+//        self.performSegueWithIdentifier("toUpdate", sender: AnyObject?())
+//    }
     
 }

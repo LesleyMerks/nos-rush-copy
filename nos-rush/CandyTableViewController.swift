@@ -13,6 +13,8 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
     var filteredArray = Array<Dictionary<String,String>>()
     
     var number = 0
+
+    
     
     func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<Dictionary<String, String>> {
         
