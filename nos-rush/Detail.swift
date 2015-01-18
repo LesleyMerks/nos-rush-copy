@@ -8,59 +8,71 @@
 
 import UIKit
 
-class Detail: UIViewController {
+class Detail: UITableViewController {
     
     
     @IBOutlet weak var newsImage: UIImageView!
-    @IBOutlet weak var newsTitle: UILabel!
-    @IBOutlet weak var newsCategory: UILabel!
+    @IBOutlet weak var newsTitel: UILabel!
+
+    
+    @IBOutlet weak var container: UIView!
+    
+   
+    @IBOutlet weak var newsCat: UILabel!
     @IBOutlet weak var newsDate: UILabel!
     
-    @IBOutlet weak var newsContent: UITextView!
     
-    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var newsText: UILabel!
     var data = Array<Dictionary<String,String>>()
     var number = 0
     
-//        @IBAction func backButtonDidPress(sender: AnyObject) {
-//            performSegueWithIdentifier("detailToHome", sender: sender)
-//        }
+    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
+        let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+        label.numberOfLines = 0
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.font = font
+        label.text = text
+        
+        label.sizeToFit()
+        return label.frame.height
+    }
     
-//       override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-//            if segue.identifier == "detailToHome" {
-//                let controller = segue.destinationViewController as Home
-//                controller.data = data
-//                controller.number = number
-//                let destinationTitle = self.data[number]["titel"]!
-//                controller.title = destinationTitle
-//            }
-//        }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
 
 
+
+        let font = UIFont(name: "Helvetica", size: 16.0)
+        
+        var height = heightForView(data[number]["text"]!, font: font!, width: 250)
+        
+       
+
+
+        newsTitel.text = data[number]["titel"]
+        newsDate.text = data[number]["datum"]
+        newsCat.text = data[number]["categorie"]
+        newsImage.image = UIImage(named :data[number]["image"]!)
+        
+        
+
+        newsText.frame.size.height = height
+        newsText.numberOfLines = 0
+        newsText.frame.origin.y = 320
+        newsText.text = data[number]["text"]
+        
+        container.frame.size.height = height + 400
+        
+        view.addSubview(container)
+        container.addSubview(newsText)
+        
+        
         
         // set the content size to be the size our our whole frame
-        self.scrollView.contentSize = self.scrollView.frame.size;
-        
-        // then set frame to be the size of the view's frame
-        scrollView.frame = self.view.frame;
-        
-        // now add our scroll view to the main view
-        view .addSubview(self.scrollView)
-        
-//        
-//                newsImage.image = UIImage(named: data[number]["image"]!)
-                 newsTitle.text = data[number]["opgeslagen"]
-//                newsDate.text = data[number]["datum"]
-//                newsContent.text = data[number]["text"]
-//        
-        
-        
-        //        navigationController?.hidesBarsOnSwipe = true
-        //        textViewWithFont(descriptionTextView, "Libertad", 16, 7)
-    }
+       }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)

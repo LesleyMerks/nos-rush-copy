@@ -7,10 +7,11 @@
 
 import UIKit
 
-class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDelegate {
+class Archive : UITableViewController  {
 
  var data = Array<Dictionary<String,String>>()
  var filteredArray = Array<Dictionary<String,String>>()
+    var number = 0
     
     func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<Dictionary<String, String>> {
         
@@ -27,7 +28,7 @@ class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDeleg
         
         return archivedItems
     }
-
+    
    
 
  
@@ -36,6 +37,8 @@ class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDeleg
         
      
         filteredArray = getArchivedItems(data)
+        
+        println(filteredArray)
         
         //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
 //        
@@ -76,21 +79,16 @@ class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDeleg
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
           let cell = self.tableView.dequeueReusableCellWithIdentifier("archivecell") as archiveCell
-//         let row = indexPath.row
-//        let myRowKey = test[row]["titel"]
-//        
-//        
-//        let savedNews  = test[row]["opgeslagen"]
-////        println(savedNews)
-//        if savedNews == "ja"{
-//            cell.textLabel?.text = myRowKey
-//            var imageName = UIImage(named: data[row]["image"]!)
-//            cell.archiveNewsImage?.image = imageName
-//            
-//        }
-//        else {
-//            
-//        }
+         let row = indexPath.row
+        let titel = filteredArray[row]["titel"]
+        let datum = filteredArray[row]["date"]
+        
+        
+        cell.niewsTitel.text = titel
+        cell.niewsDatum.text = datum
+        
+        
+        
         return cell
        
     }

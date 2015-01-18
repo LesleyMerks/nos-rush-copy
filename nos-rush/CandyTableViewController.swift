@@ -12,6 +12,8 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
     var data = Array<Dictionary<String,String>>()
     var filteredArray = Array<Dictionary<String,String>>()
     
+    var number = 0
+    
     func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<Dictionary<String, String>> {
         
         var archivedItems:Array<Dictionary<String, String>> = []
@@ -36,6 +38,7 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
         
         
         filteredArray = getArchivedItems(data)
+        println(filteredArray)
         
         //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
         //
@@ -58,7 +61,7 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(Bool())
-        
+        filteredArray = getArchivedItems(data)
         
         self.tableView.reloadData()
         
@@ -75,46 +78,41 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCellWithIdentifier("archivecell") as archiveCell
-        //         let row = indexPath.row
-        //        let myRowKey = test[row]["titel"]
-        //
-        //
-        //        let savedNews  = test[row]["opgeslagen"]
-        ////        println(savedNews)
-        //        if savedNews == "ja"{
-        //            cell.textLabel?.text = myRowKey
-        //            var imageName = UIImage(named: data[row]["image"]!)
-        //            cell.archiveNewsImage?.image = imageName
-        //
-        //        }
-        //        else {
-        //
-        //        }
-        return cell
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("wallCell") as newsCell
+        let row = indexPath.row
         
+        let titel = filteredArray[row]["titel"]
+        let date = filteredArray[row]["datum"]
+        let image = filteredArray[row]["thumb"]
+        
+        
+        cell.newsTitel.text = titel
+        cell.newsSubTitel.text = date
+        cell.newsImageView.image = UIImage(named: image!)
+        
+        return cell
     }
     
-    //delete row on swipe right
-    //    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-    //        if editingStyle == UITableViewCellEditingStyle.Delete {
-    //            let row = indexPath.row
-    //            data[row].updateValue("nee", forKey: "opgeslagen")
-    ////            data.removeAtIndex(indexPath.row)
-    //            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-    //
-    //            println(data)
-    //
-    //        }
-    //    }
+//    delete row on swipe right
+        override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+            if editingStyle == UITableViewCellEditingStyle.Delete {
+                let row = indexPath.row
+                data[row].updateValue("nee", forKey: "opgeslagen")
+    //            data.removeAtIndex(indexPath.row)
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+    
+                println(data)
+    
+            }
+        }
     
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.performSegueWithIdentifier("archiveToDetail", sender: tableView)
+        self.performSegueWithIdentifier("candyDetail", sender: tableView)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if segue.identifier == "archiveToDetail" {
+        if segue.identifier == "candyDetail" {
             let candyDetailViewController = segue.destinationViewController as UIViewController
             //            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
             //                let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!

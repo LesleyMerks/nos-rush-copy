@@ -11,9 +11,15 @@ import UIKit
 
 class CategorySettings: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var data = Array<Dictionary<String,String>>()
+    var filteredArray = Array<Dictionary<String,String>>()
+    var number = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        println(data)
         
         
         
@@ -21,12 +27,15 @@ class CategorySettings: UITableViewController, UITableViewDelegate, UITableViewD
     }
     
     
-    
-    
-    
-    
-    
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "toArchive" {
+            let controller = segue.destinationViewController as Archive
+            controller.data = data
+           controller.number = number
+            controller.filteredArray = filteredArray
+            
+        }
+    }
     
     
 }

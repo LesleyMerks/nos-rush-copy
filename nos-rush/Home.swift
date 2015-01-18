@@ -80,12 +80,16 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.tabBarController?.delegate = self
-//        
-//        
-//        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        navigationController?.navigationBar.shadowImage = UIImage()
-//        navigationController?.navigationBar.translucent = true
+        self.tabBarController?.delegate = self
+        
+//        self.navigationController?.navigationBar.barTintColor = UIColor(rgba: "#c81a2a")
+      self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
+        self.navigationController?.navigationItem.backBarButtonItem?.title = " sdfg"
+        self.navigationController?.navigationBar.topItem?.title = "Headlines";
+
+//        [self.navigationController.navigationBar
+//            setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+//        self.navigationController.navigationBar.translucent = NO;
         
         insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
         //        insertBlurView(headerView, UIBlurEffectStyle.Dark)
@@ -112,7 +116,14 @@ class Home: UIViewController,UITabBarControllerDelegate {
         //            self.dialogView.alpha = 1.0
         //                    })
         dialogView.alpha = 1
-        
+        newsIndex.text = String(number + 1 )
+        newsTotal.text = String(data.count )
+        newsTitel.text = data[number]["titel"]
+        newsCategory.text = data[number]["categorie"]
+        newsDate.text = data[number]["datum"]
+        newsSubText.text = data[number]["subtext"]
+        backgroundImageView.image = UIImage(named: data[nextbackground]["image"]!)
+        imageButton.setImage(UIImage(named: data[number]["image"]!), forState: UIControlState.Normal)
         
         ignoreNews.frame.size.width = 60
         ignoreNews.frame.origin.x = 100
@@ -233,7 +244,8 @@ class Home: UIViewController,UITabBarControllerDelegate {
                 var gravity = UIGravityBehavior(items: [dialogView])
                 gravity.gravityDirection = CGVectorMake(-4, 10)
                 animator.addBehavior(gravity)
-                        data[number].updateValue("ja", forKey: "opgeslagen")
+                        data[number].updateValue("nee", forKey: "opgeslagen")
+                                println(data[number]["opgeslagen"])
                         
                 delay(0.8) {
                     self.refreshView()
@@ -245,7 +257,8 @@ class Home: UIViewController,UITabBarControllerDelegate {
                 var gravity = UIGravityBehavior(items: [dialogView])
                 gravity.gravityDirection = CGVectorMake(4, 10)
                 animator.addBehavior(gravity)
-                
+                data[number].updateValue("ja", forKey: "opgeslagen")
+                println(data[number]["opgeslagen"])
                 delay(0.8) {
                     self.refreshView()
                 }
@@ -266,10 +279,11 @@ class Home: UIViewController,UITabBarControllerDelegate {
         {
             let navController = viewController as UINavigationController
             
-            if (navController.viewControllers[0] .isKindOfClass(Archive))
+            if (navController.viewControllers[0] .isKindOfClass(CategorySettings))
             {
-                let controller = navController.viewControllers[0] as Archive
+                let controller = navController.viewControllers[0] as CategorySettings
                 controller.data = data;
+//                controller.filteredArray = filteredArray
 
             }
             
@@ -277,6 +291,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
             {
                 let controller = navController.viewControllers[0] as CandyTableViewController
                 controller.data = data;
+//                controller.filteredArray = filteredArray
                 
             }
         }
@@ -305,14 +320,14 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
        func refreshView() {
         
-        nextbackground++
+//        nextbackground++
         
         if(nextbackground > 3){
             nextbackground = 1
         }
         
         number++
-        if number > 3 {
+        if number > data.count {
             number = 0
         }
         

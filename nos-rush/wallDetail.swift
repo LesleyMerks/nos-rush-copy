@@ -9,7 +9,7 @@
 
 import UIKit
 
-class wallDetail: UIViewController {
+class wallDetail: UITableViewController {
     
     
     

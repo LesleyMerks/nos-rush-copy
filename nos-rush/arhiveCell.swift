@@ -13,7 +13,8 @@ class archiveCell: UITableViewCell {
     
     // tableview inputs
     
-    @IBOutlet weak var archiveNewsImage: UIImageView!
 
+    @IBOutlet weak var niewsTitel: UILabel!
     
+    @IBOutlet weak var niewsDatum: UILabel!
 }
