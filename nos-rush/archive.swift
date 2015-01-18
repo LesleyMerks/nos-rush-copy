@@ -20,7 +20,7 @@ class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDeleg
             
             let archived:String = item["opgeslagen"]!
             
-            if archived == "nee" {
+            if archived == "ja" {
                 archivedItems.append(item)
             }
         }
