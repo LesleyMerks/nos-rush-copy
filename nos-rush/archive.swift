@@ -12,15 +12,15 @@ class Archive : UITableViewController, UISearchBarDelegate, UISearchDisplayDeleg
  var data = Array<Dictionary<String,String>>()
  var filteredArray = Array<Dictionary<String,String>>()
     
-    func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<AnyObject> {
+    func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<Dictionary<String, String>> {
         
-        var archivedItems:Array<AnyObject> = []
+        var archivedItems:Array<Dictionary<String, String>> = []
         
         for item: Dictionary<String, String> in originalData {
             
             let archived:String = item["opgeslagen"]!
             
-            if archived == "ja" {
+            if archived == "nee" {
                 archivedItems.append(item)
             }
         }

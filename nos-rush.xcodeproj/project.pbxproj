@@ -14,6 +14,7 @@
 		3643C8A01A20D10800B41667 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3643C89F1A20D10800B41667 /* Images.xcassets */; };
 		3643C8A31A20D10800B41667 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3643C8A11A20D10800B41667 /* LaunchScreen.xib */; };
 		3643C8AF1A20D10800B41667 /* nos_rushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643C8AE1A20D10800B41667 /* nos_rushTests.swift */; };
+		365ED1981A6BC3880033409F /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365ED1971A6BC3880033409F /* hexcolor.swift */; };
 		36BDC18C1A45EF4D005BF5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BDC18B1A45EF4D005BF5DA /* ViewController.swift */; };
 		36BDC18E1A45EF6F005BF5DA /* category-settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BDC18D1A45EF6F005BF5DA /* category-settings.swift */; };
 		36D808CC1A5A95170000CB85 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D808CB1A5A95170000CB85 /* InstructionView.swift */; };
@@ -52,6 +53,7 @@
 		3643C8A81A20D10800B41667 /* nos-rushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "nos-rushTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3643C8AD1A20D10800B41667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3643C8AE1A20D10800B41667 /* nos_rushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nos_rushTests.swift; sourceTree = "<group>"; };
+		365ED1971A6BC3880033409F /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
 		36BDC18B1A45EF4D005BF5DA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36BDC18D1A45EF6F005BF5DA /* category-settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "category-settings.swift"; sourceTree = "<group>"; };
 		36D808CB1A5A95170000CB85 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				3643C8981A20D10800B41667 /* AppDelegate.swift */,
 				36EE6F611A28A352008F34C9 /* customTabController.swift */,
 				3643C89C1A20D10800B41667 /* Main.storyboard */,
+				365ED1971A6BC3880033409F /* hexcolor.swift */,
 				3643C89F1A20D10800B41667 /* Images.xcassets */,
 				3643C8A11A20D10800B41667 /* LaunchScreen.xib */,
 				3643C8961A20D10800B41667 /* Supporting Files */,
@@ -286,6 +289,7 @@
 				36E560461A43839B008FBF77 /* newsCell.swift in Sources */,
 				36411AE01A514D0C00378DF5 /* archive.swift in Sources */,
 				36E5604E1A43848F008FBF77 /* Detail.swift in Sources */,
+				365ED1981A6BC3880033409F /* hexcolor.swift in Sources */,
 				36BDC18E1A45EF6F005BF5DA /* category-settings.swift in Sources */,
 				36E560561A43850C008FBF77 /* SpringAnimation.swift in Sources */,
 				36E560441A438378008FBF77 /* CandyTableViewController.swift in Sources */,

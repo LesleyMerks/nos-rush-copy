@@ -29,9 +29,9 @@ class Home: UIViewController,UITabBarControllerDelegate {
     @IBOutlet weak var newsIndex: UILabel!
     @IBOutlet weak var newsTotal: UILabel!
     
-    @IBOutlet weak var archiveNews: UIButton!
+    @IBOutlet weak var archiveNews: UIView!
     
-    @IBOutlet weak var ignoreNews: UIButton!
+    @IBOutlet weak var ignoreNews: UIView!
     
     @IBAction func modifyArray(sender: AnyObject) {
         
@@ -80,12 +80,12 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.delegate = self
-        
-        
-        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        navigationController?.navigationBar.shadowImage = UIImage()
-        navigationController?.navigationBar.translucent = true
+//        self.tabBarController?.delegate = self
+//        
+//        
+//        navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
+//        navigationController?.navigationBar.shadowImage = UIImage()
+//        navigationController?.navigationBar.translucent = true
         
         insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
         //        insertBlurView(headerView, UIBlurEffectStyle.Dark)
@@ -102,8 +102,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
         newsSubText.text = data[number]["subtext"]
         backgroundImageView.image = UIImage(named: data[nextbackground]["image"]!)
         imageButton.setImage(UIImage(named: data[number]["image"]!), forState: UIControlState.Normal)
-        archiveNews.setTitle("Archiveren", forState: UIControlState.Normal)
-        ignoreNews.setTitle("Volgen", forState: UIControlState.Normal)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -115,12 +114,12 @@ class Home: UIViewController,UITabBarControllerDelegate {
         dialogView.alpha = 1
         
         
-        ignoreNews.frame.size.width = 160
-
+        ignoreNews.frame.size.width = 60
+        ignoreNews.frame.origin.x = 100
         
         archiveNews.layer.zPosition = 0;
-        archiveNews.frame.origin.x = 160
-        archiveNews.frame.size.width = 160
+        archiveNews.frame.origin.x = 0
+        archiveNews.frame.size.width = 60
         
         
         //
@@ -182,50 +181,42 @@ class Home: UIViewController,UITabBarControllerDelegate {
             let newString = deltebuttonLocationString.stringByReplacingOccurrencesOfString("-", withString: " ", options: NSStringCompareOptions.LiteralSearch, range: nil)
             
             var floatValue = CGFloat((newString as NSString).floatValue)
-            if(translation.x < 1) {
-                archiveNews.frame.origin.x = deltebuttonLocation + 160
-                archiveNews.frame.size.width = floatValue + 160
-                archiveNews.layer.zPosition = 1;
+            if(translation.x > 1) {
+                archiveNews.frame.origin.x = translation.x
+                archiveNews.frame.size.width = 60
+//                archiveNews.layer.zPosition = 1;
 //                println(savebuttonLocation)
-                if(archiveNews.frame.size.width > 319 ) {
+                if(archiveNews.frame.origin.x > 100 ) {
                     archiveNews.frame.origin.x = 0
-                    archiveNews.frame.size.width = 320
-                    archiveNews.setTitle("Gearchiveerd", forState: UIControlState.Normal)
+                    archiveNews.frame.origin.x = 100
+                    
                 }
             }
             
             
-            if translation.x > 1 {
-                ignoreNews.frame.size.width = savebuttonLocation
+            if translation.x < -1 {
+                ignoreNews.frame.origin.x = savebuttonLocation-60
                 
             }
-                if (savebuttonLocation > 320) {
-                    ignoreNews.frame.size.width = 320
-                    ignoreNews.setTitle("Opgeslagen", forState: UIControlState.Normal)
+                if (savebuttonLocation < 100) {
+                    ignoreNews.frame.origin.x = 0
+                    
                 }
                 if(translation.x == -1 ){
-                    ignoreNews.frame.size.width = 160
+                    ignoreNews.frame.size.width = 60
                 }
             }
         else if sender.state == UIGestureRecognizerState.Ended {
             
             UIView.animateWithDuration(0.5) {
-                self.ignoreNews.frame.size.width = 160
+                self.ignoreNews.frame.size.width = 60
+                self.ignoreNews.frame.origin.x = 100
+
+                self.archiveNews.frame.origin.x = 0
+                self.archiveNews.frame.size.width = 60
 
 
-                self.archiveNews.frame.origin.x = 160
-                self.archiveNews.frame.size.width = 160
-
-
-                delay(0.5) {
-                    self.archiveNews.layer.zPosition = 0;
-                }
-                
-                delay(0.3){
-                    self.archiveNews.setTitle("Archiveren", forState: UIControlState.Normal)
-                    self.ignoreNews.setTitle("Volgen", forState: UIControlState.Normal)
-                }
-        }
+                      }
 
         
             
