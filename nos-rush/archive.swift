@@ -79,7 +79,8 @@ class Archive : UITableViewController  {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
           let cell = self.tableView.dequeueReusableCellWithIdentifier("archivecell") as archiveCell
-         let row = indexPath.row
+        let row = indexPath.row
+        
         let titel = filteredArray[row]["titel"]
         let datum = filteredArray[row]["date"]
         
@@ -87,8 +88,9 @@ class Archive : UITableViewController  {
         cell.niewsTitel.text = titel
         cell.niewsDatum.text = datum
         
-        
-        
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = UIColor(rgba: "#e9e9e9")
+        }
         return cell
        
     }

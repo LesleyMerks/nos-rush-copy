@@ -247,7 +247,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
                         data[number].updateValue("nee", forKey: "opgeslagen")
                                 println(data[number]["opgeslagen"])
                         
-                delay(0.8) {
+                delay(0.5) {
                     self.refreshView()
                 }
             }
@@ -259,7 +259,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
                 animator.addBehavior(gravity)
                 data[number].updateValue("ja", forKey: "opgeslagen")
                 println(data[number]["opgeslagen"])
-                delay(0.8) {
+                delay(0.5) {
                     self.refreshView()
                 }
                 
@@ -320,14 +320,14 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
        func refreshView() {
         
-//        nextbackground++
+        nextbackground++
         
-        if(nextbackground > 3){
+        if(nextbackground == data.count){
             nextbackground = 1
         }
         
         number++
-        if number > data.count {
+        if number ==  data.count {
             number = 0
         }
         

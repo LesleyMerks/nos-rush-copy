@@ -113,17 +113,14 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "candyDetail" {
-            let candyDetailViewController = segue.destinationViewController as UIViewController
-            //            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
-            //                let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
-            //                let destinationTitle = self.filteredCandies[indexPath.row].name
-            //                candyDetailViewController.title = destinationTitle
-            //            } else {
-            let indexPath = self.tableView.indexPathForSelectedRow()!
-            let destinationTitle = data[indexPath.row]["titel"]
-            //            let candyDetailViewController.title = destinationTitle
-            //            }
-        }
+            let candyDetailViewController = segue.destinationViewController as wallDetail
+                       let indexPath = self.tableView.indexPathForSelectedRow()!
+            let destinationTitle = filteredArray[indexPath.row]
+            candyDetailViewController.data = destinationTitle
+//            candyDetailViewController.filteredArray[indexPath.row]
+
+          }
+        
     }
     
     //     resfresh function

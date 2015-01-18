@@ -24,7 +24,26 @@ class Detail: UITableViewController {
     
     @IBOutlet weak var newsText: UILabel!
     var data = Array<Dictionary<String,String>>()
+    var filteredArray  = Array<Dictionary<String,String>>()
     var number = 0
+    
+    func getArchivedItems(originalData: Array<Dictionary<String, String>>) -> Array<Dictionary<String, String>> {
+        
+        var archivedItems:Array<Dictionary<String, String>> = []
+        
+        for item: Dictionary<String, String> in originalData {
+            
+            let archived:String = item["categorie"]!
+            
+            if archived == data[number]["categorie"] {
+                archivedItems.append(item)
+            }
+        }
+        
+        return archivedItems
+    }
+
+    
     
     func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
         let label:UILabel = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
@@ -41,6 +60,9 @@ class Detail: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        filteredArray = getArchivedItems(data)
+        
         self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
 
 
@@ -86,4 +108,39 @@ class Detail: UITableViewController {
     //    override func prefersStatusBarHidden() -> Bool {
     //        return true
     //    }
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if filteredArray.count > 3 {
+            return 3
+        }
+        else {
+            
+        }
+        return filteredArray.count
+    }
+    
+    
+    
+    
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("detailCell") as newsCell
+        let row = indexPath.row
+        let titel = filteredArray[row]["titel"]
+        let datum = filteredArray[row]["datum"]
+        let image = filteredArray[row]["thumb"]
+        
+        
+        cell.newsTitel.text = titel
+        cell.newsSubTitel.text = datum
+        cell.newsImageView.image = UIImage(named: image!)
+        
+        
+        return cell
+        
+    }
+
 }

@@ -15,6 +15,8 @@
 		3643C8A31A20D10800B41667 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3643C8A11A20D10800B41667 /* LaunchScreen.xib */; };
 		3643C8AF1A20D10800B41667 /* nos_rushTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3643C8AE1A20D10800B41667 /* nos_rushTests.swift */; };
 		365ED1981A6BC3880033409F /* hexcolor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 365ED1971A6BC3880033409F /* hexcolor.swift */; };
+		367E41FC1A6C09270040C204 /* updateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E41FB1A6C09270040C204 /* updateViewController.swift */; };
+		367E41FE1A6C09300040C204 /* updateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367E41FD1A6C09300040C204 /* updateView.swift */; };
 		36BDC18C1A45EF4D005BF5DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BDC18B1A45EF4D005BF5DA /* ViewController.swift */; };
 		36BDC18E1A45EF6F005BF5DA /* category-settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36BDC18D1A45EF6F005BF5DA /* category-settings.swift */; };
 		36D808CC1A5A95170000CB85 /* InstructionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D808CB1A5A95170000CB85 /* InstructionView.swift */; };
@@ -53,6 +55,8 @@
 		3643C8AD1A20D10800B41667 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3643C8AE1A20D10800B41667 /* nos_rushTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = nos_rushTests.swift; sourceTree = "<group>"; };
 		365ED1971A6BC3880033409F /* hexcolor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hexcolor.swift; sourceTree = "<group>"; };
+		367E41FB1A6C09270040C204 /* updateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateViewController.swift; sourceTree = "<group>"; };
+		367E41FD1A6C09300040C204 /* updateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = updateView.swift; sourceTree = "<group>"; };
 		36BDC18B1A45EF4D005BF5DA /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		36BDC18D1A45EF6F005BF5DA /* category-settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "category-settings.swift"; sourceTree = "<group>"; };
 		36D808CB1A5A95170000CB85 /* InstructionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 		3643C8951A20D10800B41667 /* nos-rush */ = {
 			isa = PBXGroup;
 			children = (
+				367E41FA1A6C09120040C204 /* updates */,
 				36BDC18D1A45EF6F005BF5DA /* category-settings.swift */,
 				36411ADF1A514D0C00378DF5 /* archive.swift */,
 				36BDC18B1A45EF4D005BF5DA /* ViewController.swift */,
@@ -171,6 +176,15 @@
 				36EC16CF1A2F257200D57621 /* wallDetail.swift */,
 			);
 			name = wall;
+			sourceTree = "<group>";
+		};
+		367E41FA1A6C09120040C204 /* updates */ = {
+			isa = PBXGroup;
+			children = (
+				367E41FB1A6C09270040C204 /* updateViewController.swift */,
+				367E41FD1A6C09300040C204 /* updateView.swift */,
+			);
+			name = updates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,12 +294,14 @@
 				36E560541A4384F4008FBF77 /* Misc.swift in Sources */,
 				36D808CC1A5A95170000CB85 /* InstructionView.swift in Sources */,
 				36EC16D01A2F257200D57621 /* wallDetail.swift in Sources */,
+				367E41FE1A6C09300040C204 /* updateView.swift in Sources */,
 				36E5604C1A438466008FBF77 /* Home.swift in Sources */,
 				36EE6F621A28A352008F34C9 /* customTabController.swift in Sources */,
 				36E560461A43839B008FBF77 /* newsCell.swift in Sources */,
 				36411AE01A514D0C00378DF5 /* archive.swift in Sources */,
 				36E5604E1A43848F008FBF77 /* Detail.swift in Sources */,
 				365ED1981A6BC3880033409F /* hexcolor.swift in Sources */,
+				367E41FC1A6C09270040C204 /* updateViewController.swift in Sources */,
 				36BDC18E1A45EF6F005BF5DA /* category-settings.swift in Sources */,
 				36E560561A43850C008FBF77 /* SpringAnimation.swift in Sources */,
 				36E560441A438378008FBF77 /* CandyTableViewController.swift in Sources */,
