@@ -82,7 +82,7 @@ class Archive : UITableViewController  {
         let row = indexPath.row
         
         let titel = filteredArray[row]["titel"]
-        let datum = filteredArray[row]["date"]
+        let datum = filteredArray[row]["datum"]
         
         
         cell.niewsTitel.text = titel

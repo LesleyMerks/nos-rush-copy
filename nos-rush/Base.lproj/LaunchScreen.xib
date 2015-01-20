@@ -11,7 +11,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoNosRush" translatesAutoresizingMaskIntoConstraints="NO" id="hr7-qM-s4K">
-                    <rect key="frame" x="50" y="265" width="220" height="38"/>
+                    <rect key="frame" x="68" y="268" width="184" height="31"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -21,6 +21,6 @@
         </view>
     </objects>
     <resources>
-        <image name="logoNosRush" width="397" height="60"/>
+        <image name="logoNosRush" width="198" height="30"/>
     </resources>
 </document>

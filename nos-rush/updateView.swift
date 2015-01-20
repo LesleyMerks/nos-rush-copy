@@ -49,7 +49,7 @@ class updateView: UIViewController
         button.setTitle(titleText, forState: UIControlState.Normal)
         button.addTarget(self, action: "test", forControlEvents: UIControlEvents.TouchUpInside)
         self.view.addSubview(button)
-        button.hidden = false
+        button.hidden = true
     }
     
     override func didReceiveMemoryWarning()

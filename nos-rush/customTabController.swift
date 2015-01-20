@@ -21,7 +21,7 @@ class customTabController: UITabBarController, UITabBarControllerDelegate  {
                 // load second tabbarview
        self.selectedIndex = 1;
         let tabItems = tabBar.items as [UITabBarItem]
-        tabItems[0].title = "First"
+//        tabItems[0].title = "First"
         
         let appearance = UITabBar.appearance()
         appearance.selectedImageTintColor = UIColor (rgba: "#c81a2a")

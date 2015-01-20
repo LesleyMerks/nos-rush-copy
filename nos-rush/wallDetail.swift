@@ -132,6 +132,21 @@ class wallDetail: UITableViewController {
         
     }
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("detailMore", sender: tableView)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "detailMore" {
+            let candyDetailViewController = segue.destinationViewController as WallDetailMore
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            let destinationTitle = filteredArray[indexPath.row]
+            candyDetailViewController.data = destinationTitle
+            //            candyDetailViewController.filteredArray[indexPath.row]
+            
+        }
+        
+    }
 
     
     

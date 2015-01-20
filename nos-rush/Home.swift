@@ -11,8 +11,10 @@ import MediaPlayer
 
 class Home: UIViewController,UITabBarControllerDelegate {
     
+    @IBOutlet weak var opgeslagen: UILabel!
     var data = getData()
     
+    @IBOutlet weak var gearchiveerd: UILabel!
     @IBOutlet weak var userButton: UIButton!
     
     @IBOutlet weak var backgroundImageView: UIImageView!
@@ -82,6 +84,9 @@ class Home: UIViewController,UITabBarControllerDelegate {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
         
+        opgeslagen.hidden = true
+        gearchiveerd.hidden = true
+        
 //        self.navigationController?.navigationBar.barTintColor = UIColor(rgba: "#c81a2a")
       self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
         self.navigationController?.navigationItem.backBarButtonItem?.title = " sdfg"
@@ -111,6 +116,9 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(Bool())
+        
+        opgeslagen.hidden = true
+        gearchiveerd.hidden = true
         
         //        UIView.animateWithDuration(1.5, animations: {
         //            self.dialogView.alpha = 1.0
@@ -200,6 +208,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
                 if(archiveNews.frame.origin.x > 100 ) {
                     archiveNews.frame.origin.x = 0
                     archiveNews.frame.origin.x = 100
+                    opgeslagen.hidden = false
                     
                 }
             }
@@ -207,16 +216,20 @@ class Home: UIViewController,UITabBarControllerDelegate {
             
             if translation.x < -1 {
                 ignoreNews.frame.origin.x = savebuttonLocation-60
+//                println(translation.x)
                 
             }
-                if (savebuttonLocation < 100) {
+                if (translation.x < -100) {
                     ignoreNews.frame.origin.x = 0
+                    gearchiveerd.hidden = false
+                    
                     
                 }
                 if(translation.x == -1 ){
                     ignoreNews.frame.size.width = 60
                 }
-            }
+            
+                       }
         else if sender.state == UIGestureRecognizerState.Ended {
             
             UIView.animateWithDuration(0.5) {
@@ -225,6 +238,9 @@ class Home: UIViewController,UITabBarControllerDelegate {
 
                 self.archiveNews.frame.origin.x = 0
                 self.archiveNews.frame.size.width = 60
+                
+                self.opgeslagen.hidden = true
+                self.gearchiveerd.hidden = true
 
 
                       }
