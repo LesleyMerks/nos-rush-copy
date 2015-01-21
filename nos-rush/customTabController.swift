@@ -21,10 +21,20 @@ class customTabController: UITabBarController, UITabBarControllerDelegate  {
                 // load second tabbarview
        self.selectedIndex = 1;
         let tabItems = tabBar.items as [UITabBarItem]
+       
+        
+
+
 //        tabItems[0].title = "First"
         
+        
         let appearance = UITabBar.appearance()
-        appearance.selectedImageTintColor = UIColor (rgba: "#c81a2a")
+
+        appearance.selectedImageTintColor = UIColor (rgba: "#fff")
+       
+
+
+
         
 //       var cameraTab : UITabBarItem = self.tabBar.items![1] as UITabBarItem
 //       cameraTab.badgeValue = "4"

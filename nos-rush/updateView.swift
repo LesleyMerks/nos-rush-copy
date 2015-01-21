@@ -23,7 +23,7 @@ class updateView: UIViewController
         
 //        view.addSubview(imageView)
         
-        let titleLable =  UILabel(frame: CGRectMake(10, 130, 300, 90))
+        let titleLable =  UILabel(frame: CGRectMake(23, 130, 300, 90))
         titleLable.textColor = UIColor.blackColor()
         titleLable.text = titleCaption
         titleLable.numberOfLines = 0
@@ -36,7 +36,7 @@ class updateView: UIViewController
         dateLabel.text = imageFile
         view.addSubview(dateLabel)
         
-        let label = UILabel(frame: CGRectMake(10, 130, 100, 20))
+        let label = UILabel(frame: CGRectMake(23, 130, 100, 20))
         label.textColor = UIColor.blackColor()
         label.text = titleText
         label.numberOfLines = 0

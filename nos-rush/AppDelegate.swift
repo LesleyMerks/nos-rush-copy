@@ -22,6 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBarAppearace.tintColor = UIColor(rgba: "#c81a2a")
 
         
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(rgba: "#797979")]
+        navigationBarAppearace.titleTextAttributes = titleDict
+        
+
+        
                
         return true
     }

@@ -67,7 +67,7 @@ class Detail: UITableViewController {
 
 
 
-        let font = UIFont(name: "Helvetica", size: 16.0)
+        let font = UIFont(name: "Helvetica", size: 15.0)
         
         var height = heightForView(data[number]["text"]!, font: font!, width: 250)
         
@@ -83,7 +83,7 @@ class Detail: UITableViewController {
 
         newsText.frame.size.height = height
         newsText.numberOfLines = 0
-        newsText.frame.origin.y = 320
+        newsText.frame.origin.y = 290
         newsText.text = data[number]["text"]
         
         container.frame.size.height = height + 400
