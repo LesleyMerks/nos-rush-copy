@@ -76,13 +76,13 @@ class DetailMore: UIViewController {
         
         
         
-        nieuwsTekst?.frame.size.height = heights + 20
+        nieuwsTekst?.frame.size.height = heights + 50
         
         
         nieuwsTekst?.frame.origin.y = 330
         nieuwsTekst?.text = data["text"]
         
-        scrollContainer.contentSize = CGSize(width:self.view.bounds.size.width, height: heights+500 )
+        scrollContainer.contentSize = CGSize(width:self.view.bounds.size.width, height: heights+800 )
         view.addSubview(scrollContainer)
         scrollContainer.addSubview(nieuwsTekst)
         

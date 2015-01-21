@@ -100,10 +100,10 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
             if editingStyle == UITableViewCellEditingStyle.Delete {
                 let row = indexPath.row
                 data[row].updateValue("nee", forKey: "opgeslagen")
-    //            data.removeAtIndex(indexPath.row)
+                data.removeAtIndex(row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
     
-                println(data)
+//                println(data)
     
             }
         }

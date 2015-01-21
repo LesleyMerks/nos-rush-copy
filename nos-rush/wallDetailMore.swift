@@ -77,7 +77,7 @@ class WallDetailMore: UIViewController {
         
         
         
-        nieuwsTekst?.frame.size.height = heights + 20
+        nieuwsTekst?.frame.size.height = heights + 50
         
 
         nieuwsTekst?.frame.origin.y = 335
