@@ -80,8 +80,7 @@ class wallDetail: UITableViewController {
         niewsAfbeelding.image = UIImage(named :data["image"]!)
         
         
-        meerLezen.frame.origin.y = container.frame.size.height + 286
-        meerLezenLine.frame.origin.y =  container.frame.size.height + 332
+        
 
         nieuwsTekst.frame.size.height = height
         nieuwsTekst.frame.origin.y = 480
@@ -92,6 +91,9 @@ class wallDetail: UITableViewController {
         line.layer.zPosition = 3
         niewsAfbeelding.layer.zPosition = 2
         container.frame.size.height = height + 580
+        
+        meerLezen.frame.origin.y = container.frame.size.height-42
+        meerLezenLine.frame.origin.y =  container.frame.size.height
         
         view.addSubview(container)
         view.addSubview(niewsAfbeelding)

@@ -82,14 +82,16 @@ class Detail: UITableViewController {
         newsImage.image = UIImage(named :data[number]["image"]!)
         
         
-        meerLezen.frame.origin.y = container.frame.size.height + 358
-        meerLezenLine.frame.origin.y =  container.frame.size.height + 400
+       
         newsText?.frame.size.height = height + 50
         newsText?.frame.origin.y = 300
         newsText?.text = data[number]["text"]
 
         
         container.frame.size.height = height + 430
+        
+        meerLezen.frame.origin.y = container.frame.size.height-42
+        meerLezenLine.frame.origin.y =  container.frame.size.height
         
         view.addSubview(container)
         container.addSubview(newsText!)
