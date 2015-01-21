@@ -77,6 +77,18 @@ func getData() -> Array<Dictionary<String,String>> {
             
         ],
         
+        [
+            "titel" : "Einde flits",
+            "subtext": " ",
+            "image" : "eindeflits.png",
+            "thumb" : "",
+            "datum": "",
+            "opgeslagen": "",
+            "categorie" : "",
+            "text"  : ""
+            
+        ],
+
         
         
     ]

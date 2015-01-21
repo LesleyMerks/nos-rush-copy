@@ -16,7 +16,8 @@ class WallDetailMore: UIViewController {
     
     @IBOutlet weak var nieuwsTitel: UILabel!
   
-    @IBOutlet weak var nieuwsTekst: UILabel!
+    
+    @IBOutlet weak var nieuwsTekst: UITextView!
     @IBOutlet weak var nieuwsDatum: UILabel!
     @IBOutlet weak var nieuwsCat: UILabel!
     var data = Dictionary<String,String>()
@@ -63,7 +64,7 @@ class WallDetailMore: UIViewController {
         nieuwsDatum.text = data["datum"]
         nieuwsCat.text = data["categorie"]
         nieuwsTitel.text = data["titel"]
-        nieuwsTekst.text = data["text"]
+        nieuwsTekst?.text = data["text"]
         nieuwsAfbeelding.image = UIImage(named: data["image"]!)
         
         let font = UIFont(name: "Helvetica", size: 16.0)
@@ -76,11 +77,11 @@ class WallDetailMore: UIViewController {
         
         
         
-        nieuwsTekst.frame.size.height = heights
+        nieuwsTekst?.frame.size.height = heights + 20
         
-        nieuwsTekst.numberOfLines = 0
-        nieuwsTekst.frame.origin.y = 380
-        nieuwsTekst.text = data["text"]
+
+        nieuwsTekst?.frame.origin.y = 335
+        nieuwsTekst?.text = data["text"]
         
         scrollContainer.contentSize = CGSize(width:self.view.bounds.size.width, height: heights+500 )
         view.addSubview(scrollContainer)

@@ -22,7 +22,7 @@ class Detail: UITableViewController {
     @IBOutlet weak var newsDate: UILabel!
     
     
-    @IBOutlet weak var newsText: UILabel!
+    @IBOutlet weak var newsText: UITextView?
     var data = Array<Dictionary<String,String>>()
     var filteredArray  = Array<Dictionary<String,String>>()
     var number = 0
@@ -81,15 +81,15 @@ class Detail: UITableViewController {
         
         
 
-        newsText.frame.size.height = height
-        newsText.numberOfLines = 0
-        newsText.frame.origin.y = 290
-        newsText.text = data[number]["text"]
+        newsText?.frame.size.height = height + 20
+        newsText?.frame.origin.y = 300
+        newsText?.text = data[number]["text"]
+
         
         container.frame.size.height = height + 400
         
         view.addSubview(container)
-        container.addSubview(newsText)
+        container.addSubview(newsText!)
         
         
         

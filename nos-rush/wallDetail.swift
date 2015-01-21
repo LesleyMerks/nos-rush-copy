@@ -13,8 +13,10 @@ class wallDetail: UITableViewController {
     
     @IBOutlet weak var nieuwstitel: UILabel!
 
+    @IBOutlet weak var line: UIView!
     @IBOutlet weak var updateView: UIView!
-    @IBOutlet weak var nieuwsTekst: UILabel!
+
+    @IBOutlet weak var nieuwsTekst: UITextView!
     @IBOutlet weak var niewsDatum: UILabel!
     @IBOutlet weak var niewsCat: UILabel!
     @IBOutlet weak var container: UIView!
@@ -78,19 +80,20 @@ class wallDetail: UITableViewController {
         
         
         nieuwsTekst.frame.size.height = height
-        nieuwsTekst.numberOfLines = 0
-        nieuwsTekst.frame.origin.y = 450
+        nieuwsTekst.frame.origin.y = 480
         nieuwsTekst.text = data["text"]
         updateView.frame.origin.y = 120
         updateView.layer.zPosition = 1
         nieuwstitel.layer.zPosition = 3
+        line.layer.zPosition = 3
         niewsAfbeelding.layer.zPosition = 2
-        container.frame.size.height = height + 450
+        container.frame.size.height = height + 500
         
         view.addSubview(container)
         view.addSubview(niewsAfbeelding)
         view.addSubview(nieuwstitel)
         view.addSubview(updateView)
+        view.addSubview(line)
         container.addSubview(nieuwsTekst)
         
         
