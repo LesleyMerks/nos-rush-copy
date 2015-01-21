@@ -4,9 +4,9 @@ import UIKit
 class ViewController: UIViewController, UIPageViewControllerDataSource
 {
     var pageViewController : UIPageViewController?
-    var pageContent : Array<String> = ["God vs Man God vs Man God vs Man God vs Man God vs Man", "Cool Breeze", "Fire Sky"]
-    var pageImages : Array<String> = ["intro2.png", "intro3.png", "intro3.png"]
-    var pageTitles : Array<String> = ["Swipe door het nieuws heen", "Lees berichten terug op jouw persoonlijke wall", "Volledig op de hoogte van het nieuws"]
+    var pageContent : Array<String> = ["1.instructie", "2.instructie", "3.instructie"]
+    var pageImages : Array<String> = ["intro1.png", "intro2.png", "intro3.png"]
+    var pageTitles : Array<String> = ["In een flits door het nieuws. Swipe naar rechts om nieuws op te slaan en lees het op een later tijdstip terug.", "Lees jouw opgeslagen berichten terug op jouw persoonlijke wall", "Je bent volledig op de hoogte van het nieuws"]
     var currentIndex : Int = 0
     
     override func viewDidLoad()

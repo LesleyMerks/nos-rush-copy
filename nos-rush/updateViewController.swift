@@ -6,7 +6,7 @@ class updateViewController: UIViewController, UIPageViewControllerDataSource
     var pageViewController : UIPageViewController?
     var pageContent : Array<String> = ["Update", "Update", "Update"]
     var pageImages : Array<String> = ["30 minuten geleden", "4 uur geleden", "2 dagen geleden"]
-    var pageTitles : Array<String> = ["Swipe door het nieuws heen", "Lees berichten terug op jouw persoonlijke wall", "Volledig op de hoogte van het nieuws"]
+    var pageTitles : Array<String> = ["Dit is een update over dit bericht", "Dit is nog een update over dit bericht", "Dit nog een update over dit bericht"]
     var currentIndex : Int = 0
     
     override func viewDidLoad()

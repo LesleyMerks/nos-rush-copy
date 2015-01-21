@@ -9,17 +9,16 @@
 
 import UIKit
 
-class WallDetailMore: UIViewController {
+class DetailMore: UIViewController {
     
-    @IBOutlet weak var nieuwsAfbeelding: UIImageView!
-       @IBOutlet weak var scrollContainer: UIScrollView!
-    
-    @IBOutlet weak var nieuwsTitel: UILabel!
   
-    
     @IBOutlet weak var nieuwsTekst: UITextView!
+    @IBOutlet weak var nieuwsTitel: UILabel!
+    @IBOutlet weak var scrollContainer: UIScrollView!
+    
     @IBOutlet weak var nieuwsDatum: UILabel!
     @IBOutlet weak var nieuwsCat: UILabel!
+    @IBOutlet weak var nieuwsAfbeelding: UIImageView!
     var data = Dictionary<String,String>()
     
     var test = getData()
@@ -79,8 +78,8 @@ class WallDetailMore: UIViewController {
         
         nieuwsTekst?.frame.size.height = heights + 20
         
-
-        nieuwsTekst?.frame.origin.y = 335
+        
+        nieuwsTekst?.frame.origin.y = 330
         nieuwsTekst?.text = data["text"]
         
         scrollContainer.contentSize = CGSize(width:self.view.bounds.size.width, height: heights+500 )
@@ -92,7 +91,7 @@ class WallDetailMore: UIViewController {
         
     }
     
-       
+    
     
     
     

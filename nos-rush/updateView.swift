@@ -60,7 +60,7 @@ class updateView: UIViewController
     private func setupPageControl() {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.whiteColor()
-        appearance.currentPageIndicatorTintColor = UIColor.redColor()
+        appearance.currentPageIndicatorTintColor = UIColor(rgba: "#c81a2a")
         appearance.backgroundColor = UIColor(rgba: "#e0e0e0")
     }
     

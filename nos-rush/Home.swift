@@ -14,6 +14,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
     @IBOutlet weak var opgeslagen: UILabel!
     var data = getData()
     
+    @IBOutlet weak var line: UIView!
     @IBOutlet weak var gearchiveerd: UILabel!
     @IBOutlet weak var userButton: UIButton!
     
@@ -24,10 +25,13 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     @IBOutlet weak var newsTitel: UILabel!
     @IBOutlet weak var newsCategory: UILabel!
-    @IBOutlet weak var newsSubText: UILabel!
+    @IBOutlet weak var newsSubText: UITextView!
     @IBOutlet weak var newsDate: UILabel!
     
 
+    @IBOutlet weak var verwijderdRechts: UILabel!
+    @IBOutlet weak var opslaanRechts: UILabel!
+    
     @IBOutlet weak var newsIndex: UILabel!
     @IBOutlet weak var newsTotal: UILabel!
     
@@ -37,12 +41,35 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     @IBAction func modifyArray(sender: AnyObject) {
         
-        
+        animator.removeAllBehaviors()
+        var gravity = UIGravityBehavior(items: [dialogView])
+        gravity.gravityDirection = CGVectorMake(4, 10)
+        animator.addBehavior(gravity)
         data[number].updateValue("ja", forKey: "opgeslagen")
+        opslaanRechts.hidden = false
         println(data[number]["opgeslagen"])
-        viewDidAppear(true)
+        delay(0.5) {
+            self.refreshView()
+        }
+
     }
    
+   
+    @IBAction func archiveArray(sender: AnyObject) {
+        
+        animator.removeAllBehaviors()
+        var gravity = UIGravityBehavior(items: [dialogView])
+        gravity.gravityDirection = CGVectorMake(-4, 10)
+        animator.addBehavior(gravity)
+        data[number].updateValue("nee", forKey: "opgeslagen")
+        verwijderdRechts.hidden = false
+        println(data[number]["opgeslagen"])
+        delay(0.5) {
+            self.refreshView()
+        }
+
+        
+    }
     
     @IBAction func imageButtonDidPress(sender: AnyObject) {
         
@@ -83,9 +110,15 @@ class Home: UIViewController,UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
-        
+        opslaanRechts.hidden = true
+        verwijderdRechts.hidden = true
         opgeslagen.hidden = true
         gearchiveerd.hidden = true
+        line.hidden = false
+        
+        if number == 6 {
+         line.hidden = true
+        }
         
 //        self.navigationController?.navigationBar.barTintColor = UIColor(rgba: "#c81a2a")
       self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
@@ -116,9 +149,15 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(Bool())
-        
+        opslaanRechts.hidden = true
         opgeslagen.hidden = true
         gearchiveerd.hidden = true
+        verwijderdRechts.hidden = true
+        line.hidden = false
+        
+        if number == 6 {
+            line.hidden = true
+        }
         
         //        UIView.animateWithDuration(1.5, animations: {
         //            self.dialogView.alpha = 1.0

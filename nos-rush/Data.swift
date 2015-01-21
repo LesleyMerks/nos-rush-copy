@@ -12,7 +12,7 @@ func getData() -> Array<Dictionary<String,String>> {
     
     var data = [
         [
-            "titel" : "DIT LUISTEREN CHIRURGEN ALS JE ONDER NARCOSE BENT",
+            "titel" : "DIT LUISTEREN CHIRURGEN",
             "subtext": "Volgens Brits onderzoek luisteren 8 op de 10 chirurgen tijdens operaties naar muziek, zodat ze zich beter kunnen concentreren.",
             "image" : "chirurg1.png",
             "thumb" : "chirurg2.png",
@@ -33,7 +33,7 @@ func getData() -> Array<Dictionary<String,String>> {
             "text"  : "Het slechte weer heeft geleid tot een drukke ochtendspits. Rond half negen stond er op het hoogtepunt zo'n 370 kilometer file op de snelwegen. Normaal staat er rond dat tijdstip zo'n 200 kilometer. Na half tien nam de verkeersdrukte af.\n\n Door de harde wind en de regen stond het op veel plaatsen door het hele land stil. De A44 tussen Kaagdorp en Noordwijkerhout was een uur afgesloten na twee ongelukken. Verder waren er onder meer problemen ten noorden van Amsterdam en bij Arnhem, Nijmegen en Utrecht.De ANWB had gisteren vanwege het slechte weer al gewaarschuwd voor een drukke ochtendspits. Op Schiphol zijn er geen vertragingen door de harde wind. "],
         
         [
-            "titel" : "AFM: ZZP'ERS MOETEN VERPLICHT SPAREN VOOR PENSIOEN",
+            "titel" : "ZZP'ERS VERPLICHT SPAREN VOOR PENSIOEN",
             "subtext": "Zzp'ers moeten verplicht sparen voor hun pensioen en werknemers moeten meer zeggenschap krijgen over de hoogte van hun pensioenpremie.",
             "image" : "afm1.png",
             "thumb" : "afm2.png",
@@ -44,7 +44,7 @@ func getData() -> Array<Dictionary<String,String>> {
         ],
         
         [
-            "titel" : "ZEKER 150 HUISHOUDENS WATERINGEN MOETEN BINNENBLIJVEN",
+            "titel" : "ZEKER 150 HUISHOUDENS MOETEN BINNENBLIJVEN",
             "subtext": "150 tot 180 huishoudens in Wateringen moeten vandaag binnenblijven.",
             "image" : "brand1.png",
             "thumb" : "brand2.png",
@@ -56,7 +56,7 @@ func getData() -> Array<Dictionary<String,String>> {
         
         [
             
-            "titel" :  "'DOOR HET KIERTJE VAN HET KASTJE ZAG IK ZIJN SCHADUW",
+            "titel" :  "DOOR HET KIERTJE VAN HET KASTJE",
             "subtext": "Hij zat acht en een half uur in een gootsteenkastje.",
             "image" : "kier1.png",
             "thumb" : "kier2.png",
@@ -78,13 +78,13 @@ func getData() -> Array<Dictionary<String,String>> {
         ],
         
         [
-            "titel" : "Einde flits",
-            "subtext": " ",
+            "titel" : "",
+            "subtext": "Je bent op de hoogte van het sport, economisch en binnenlands nieuws. ",
             "image" : "eindeflits.png",
             "thumb" : "",
             "datum": "",
             "opgeslagen": "",
-            "categorie" : "",
+            "categorie" : "Einde Flits",
             "text"  : ""
             
         ],

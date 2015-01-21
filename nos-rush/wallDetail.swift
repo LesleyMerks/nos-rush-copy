@@ -13,6 +13,8 @@ class wallDetail: UITableViewController {
     
     @IBOutlet weak var nieuwstitel: UILabel!
 
+    @IBOutlet weak var meerLezenLine: UIView!
+    @IBOutlet weak var meerLezen: UILabel!
     @IBOutlet weak var line: UIView!
     @IBOutlet weak var updateView: UIView!
 
@@ -67,7 +69,7 @@ class wallDetail: UITableViewController {
         
         let font = UIFont(name: "Helvetica", size: 16.0)
         
-        var height = heightForView(data["text"]!, font: font!, width: 250)
+        var height = heightForView(data["text"]!, font: font!, width: 283)
         
         
         
@@ -78,7 +80,9 @@ class wallDetail: UITableViewController {
         niewsAfbeelding.image = UIImage(named :data["image"]!)
         
         
-        
+        meerLezen.frame.origin.y = container.frame.size.height + 286
+        meerLezenLine.frame.origin.y =  container.frame.size.height + 332
+
         nieuwsTekst.frame.size.height = height
         nieuwsTekst.frame.origin.y = 480
         nieuwsTekst.text = data["text"]
@@ -87,7 +91,7 @@ class wallDetail: UITableViewController {
         nieuwstitel.layer.zPosition = 3
         line.layer.zPosition = 3
         niewsAfbeelding.layer.zPosition = 2
-        container.frame.size.height = height + 500
+        container.frame.size.height = height + 580
         
         view.addSubview(container)
         view.addSubview(niewsAfbeelding)

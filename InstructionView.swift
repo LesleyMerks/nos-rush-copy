@@ -15,7 +15,7 @@ class InstructionView: UIViewController
         
 //        view.backgroundColor = UIColor(patternImage: UIImage(named: imageFile)!)
         setupPageControl()
-        let imageView = UIImageView(frame: CGRectMake(70, 40, 140, 300) )
+        let imageView = UIImageView(frame: CGRectMake(80, 60, 140, 300) )
         imageView.image=UIImage(named: imageFile)
         imageView.contentMode = .ScaleAspectFill
 
@@ -27,7 +27,7 @@ class InstructionView: UIViewController
         titleLable.text = titleCaption
         titleLable.textAlignment = .Center
         titleLable.numberOfLines = 0
-        titleLable.font = UIFont(name: titleLable.font.fontName, size: 24)
+        titleLable.font = UIFont(name: titleLable.font.fontName, size: 18)
         view.addSubview(titleLable)
         
         let label = UILabel(frame: CGRectMake(10, 360, 300, 200))

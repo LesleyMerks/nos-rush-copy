@@ -14,7 +14,9 @@ class Detail: UITableViewController {
     @IBOutlet weak var newsImage: UIImageView!
     @IBOutlet weak var newsTitel: UILabel!
 
+    @IBOutlet weak var meerLezen: UILabel!
     
+    @IBOutlet weak var meerLezenLine: UIView!
     @IBOutlet weak var container: UIView!
     
    
@@ -67,9 +69,9 @@ class Detail: UITableViewController {
 
 
 
-        let font = UIFont(name: "Helvetica", size: 15.0)
+        let font = UIFont(name: "Helvetica", size: 16.0)
         
-        var height = heightForView(data[number]["text"]!, font: font!, width: 250)
+        var height = heightForView(data[number]["text"]!, font: font!, width: 283)
         
        
 
@@ -80,13 +82,14 @@ class Detail: UITableViewController {
         newsImage.image = UIImage(named :data[number]["image"]!)
         
         
-
-        newsText?.frame.size.height = height + 20
+        meerLezen.frame.origin.y = container.frame.size.height + 358
+        meerLezenLine.frame.origin.y =  container.frame.size.height + 400
+        newsText?.frame.size.height = height + 50
         newsText?.frame.origin.y = 300
         newsText?.text = data[number]["text"]
 
         
-        container.frame.size.height = height + 400
+        container.frame.size.height = height + 430
         
         view.addSubview(container)
         container.addSubview(newsText!)
@@ -142,5 +145,22 @@ class Detail: UITableViewController {
         return cell
         
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.performSegueWithIdentifier("singleMore", sender: tableView)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if segue.identifier == "singleMore" {
+            let candyDetailViewController = segue.destinationViewController as DetailMore
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            let destinationTitle = filteredArray[indexPath.row]
+            candyDetailViewController.data = destinationTitle
+            //            candyDetailViewController.filteredArray[indexPath.row]
+            
+        }
+        
+    }
+
 
 }
