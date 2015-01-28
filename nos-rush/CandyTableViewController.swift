@@ -1,7 +1,4 @@
 //
-//  CandyTableViewController.swift
-//  CandySearch
-//
 //  Copyright (c) 2014 Razeware LLC. All rights reserved.
 //
 
@@ -42,17 +39,6 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
         filteredArray = getArchivedItems(data)
         println(filteredArray)
         
-        //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
-        //
-        //
-        //        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-        //        navigationController!.navigationBar.shadowImage = UIImage()
-        //        navigationController!.navigationBar.translucent = true
-        
-        
-        
-        
-        //        self.tableView.rowHeight = 120.0
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("refreshAnimation"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
@@ -102,9 +88,6 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
                 data[row].updateValue("nee", forKey: "opgeslagen")
                 data.removeAtIndex(row)
                 tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-    
-//                println(data)
-    
             }
         }
     
@@ -119,8 +102,6 @@ class CandyTableViewController : UITableViewController, UISearchBarDelegate, UIS
                        let indexPath = self.tableView.indexPathForSelectedRow()!
             let destinationTitle = filteredArray[indexPath.row]
             candyDetailViewController.data = destinationTitle
-//            candyDetailViewController.filteredArray[indexPath.row]
-
           }
         
     }

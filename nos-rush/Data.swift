@@ -1,10 +1,3 @@
-//
-//  Data.swift
-//  ShotsDemo
-//
-//  Created by Meng To on 2014-07-04.
-//  Copyright (c) 2014 Meng To. All rights reserved.
-//
 
 import UIKit
 
@@ -76,6 +69,34 @@ func getData() -> Array<Dictionary<String,String>> {
             "text"  : "Duikers hebben de cockpitvoicerecorder van het neergestorte AirAsia-toestel boven water gehaald. De zwarte doos werd gevonden vlak bij de plek waar gisteren de andere zwarte doos al werd gevonden in de Javazee bij Indonesië.\n\n De cockpitvoicerecorder is aan boord gehaald van een Indonesisch marineschip en wordt voor onderzoek naar de hoofdstad Jakarta gebracht. De doos bevat geluidsopnames uit de cockpit en kan dus mogelijk meer duidelijkheid geven over de oorzaak van de crash.\n\n De andere zwarte doos bevat de vluchtgegevens van het neergestorte toestel van AirAsia. Het vliegtuig stortte op 28 december in zee. Aan boord waren 162 mensen. Tot nu toe zijn er 48 lichamen geborgen."
             
         ],
+        
+        [
+            "titel" : "Nog meer kijkers voor Boer zoekt vrouw",
+            "subtext": "Boer zoekt vrouw heeft een half miljoen kijkers meer getrokken dan vorige week.",
+            "image" : "boer1.png",
+            "thumb" : "boer2.png",
+            "datum": "Donderdag 22 januari",
+            "opgeslagen": "",
+            "categorie" : "Cultuur en media",
+            "text"  : "Boer zoekt vrouw heeft een half miljoen kijkers meer getrokken dan vorige week. Toen keken 3,7 miljoen mensen naar het datingprogramma, gisteren zaten er 4,2 miljoen mensen te kijken hoe het de boeren en hun mogelijke partners verging. \n\n De mars tegen terreur in Parijs werd gistermiddag door 500.000 mensen bekeken. Het verslag van de manifestatie, waaraan ook tal van regeringsleiders meededen, was live te zien op NPO2."
+            
+        ],
+        [
+            "titel" : "Eerste Kamerlid valt flauw tijdens debat",
+            "subtext": "Bij 2600 klanten met een levensverzekering van verzekeraar Delta Lloyd is een brief op de mat gevallen met de aanhef 'Aan de erven van'.",
+            "image" : "eerste1.png",
+            "thumb" : "eerste2.png",
+            "datum": "Donderdag 22 januari",
+            "opgeslagen": "",
+            "categorie" : "Politiek",
+            "text"  : "Eerste Kamerlid voor D66 Marijke Scholten is gisteravond onwel geworden tijdens een lang debat over de begroting van justitie. Ze stond op dat moment achter het spreekgestoelte om vragen te beantwoorden. \n\n De 68-jarige Scholten werd snel na haar val overeind geholpen door collega-senatoren. Volgens een woordvoerder van de Eerste Kamer gaat het weer redelijk met Scholten. De D66-senator zou weer goed aanspreekbaar zijn. Ze is door mensen van de GGD onderzocht en voor controle naar het ziekenhuis gebracht.\n\n Een jaar geleden zakte Scholten ook al in elkaar tijdens een debat in de senaat. Toen voelde ze de flauwte aankomen en kon ze een collega waarschuwen. Nu viel ze ineens om. \n\n Het debat in de Eerste Kamer is later hervat. "
+            
+        ],
+
+        
+        
+
+
         
         [
             "titel" : "",

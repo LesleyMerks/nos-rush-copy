@@ -1,9 +1,4 @@
-//
-//  CandyTableViewController.swift
-//  CandySearch
-//
-//  Copyright (c) 2014 Razeware LLC. All rights reserved.
-//
+
 
 import UIKit
 
@@ -34,29 +29,11 @@ class Archive : UITableViewController  {
  
     override func viewDidLoad() {
        super.viewDidLoad()
-        
-     
         filteredArray = getArchivedItems(data)
-        
         println(filteredArray)
-        
-        //        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Bordered, target: nil, action: nil)
-//        
-//        
-//        navigationController!.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
-//        navigationController!.navigationBar.shadowImage = UIImage()
-//        navigationController!.navigationBar.translucent = true
-        
-        
-        
-        
-//        self.tableView.rowHeight = 120.0
         var refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: Selector("refreshAnimation"), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshControl
-        // Reload the table
-
-      
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -95,20 +72,6 @@ class Archive : UITableViewController  {
        
     }
     
-//delete row on swipe right
-//    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-//        if editingStyle == UITableViewCellEditingStyle.Delete {
-//            let row = indexPath.row
-//            data[row].updateValue("nee", forKey: "opgeslagen")
-////            data.removeAtIndex(indexPath.row)
-//            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
-//            
-//            println(data)
-//            
-//        }
-//    }
-    
-    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.performSegueWithIdentifier("archiveToDetail", sender: tableView)
     }
@@ -116,15 +79,10 @@ class Archive : UITableViewController  {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "archiveToDetail" {
             let candyDetailViewController = segue.destinationViewController as UIViewController
-//            if sender as UITableView == self.searchDisplayController!.searchResultsTableView {
-//                let indexPath = self.searchDisplayController!.searchResultsTableView.indexPathForSelectedRow()!
-//                let destinationTitle = self.filteredCandies[indexPath.row].name
-//                candyDetailViewController.title = destinationTitle
-//            } else {
+
                 let indexPath = self.tableView.indexPathForSelectedRow()!
                 let destinationTitle = data[indexPath.row]["titel"]
-//            let candyDetailViewController.title = destinationTitle
-//            }
+
         }
     }
     

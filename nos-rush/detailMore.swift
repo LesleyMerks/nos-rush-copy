@@ -53,10 +53,6 @@ class DetailMore: UIViewController {
         return archivedItems
     }
     
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,13 +65,6 @@ class DetailMore: UIViewController {
         let font = UIFont(name: "Helvetica", size: 16.0)
         
         var heights = heightForView(data["text"]!, font: font!, width: 283)
-        
-        
-        
-        
-        
-        
-        
         nieuwsTekst?.frame.size.height = heights + 50
         
         
@@ -86,16 +75,6 @@ class DetailMore: UIViewController {
         view.addSubview(scrollContainer)
         scrollContainer.addSubview(nieuwsTekst)
         
-        
-        
-        
     }
-    
-    
-    
-    
-    
-    
-    
     
 }

@@ -1,11 +1,3 @@
-//
-//  SpringAnimation.swift
-//  ShotsDemo
-//
-//  Created by Meng To on 2014-07-04.
-//  Copyright (c) 2014 Meng To. All rights reserved.
-//
-
 import UIKit
 
 var duration = 0.7

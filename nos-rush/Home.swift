@@ -1,10 +1,3 @@
-//
-//  Home.swift
-//  ShotsApp
-//
-//  Created by Meng To on 2014-07-29.
-//  Copyright (c) 2014 Meng To. All rights reserved.
-//
 
 import UIKit
 import MediaPlayer
@@ -103,7 +96,6 @@ class Home: UIViewController,UITabBarControllerDelegate {
     
     
     
-    //    var data = getData()
     var nextbackground = 1
     var number = 0
     
@@ -116,21 +108,21 @@ class Home: UIViewController,UITabBarControllerDelegate {
         gearchiveerd.hidden = true
         line.hidden = false
         
-        if number == 6 {
+        if number == 8 {
          line.hidden = true
         }
         
-//        self.navigationController?.navigationBar.barTintColor = UIColor(rgba: "#c81a2a")
-      self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
+
+        self.navigationController?.navigationBar.tintColor = UIColor(rgba: "#c81a2a")
         self.navigationController?.navigationItem.backBarButtonItem?.title = " sdfg"
         self.navigationController?.navigationBar.topItem?.title = "Headlines";
 
-//        [self.navigationController.navigationBar
-//            setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-//        self.navigationController.navigationBar.translucent = NO;
+
+
+
         
         insertBlurView(backgroundImageView, UIBlurEffectStyle.Light)
-        //        insertBlurView(headerView, UIBlurEffectStyle.Dark)
+
         
         animator = UIDynamicAnimator(referenceView: view)
         
@@ -155,7 +147,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
         verwijderdRechts.hidden = true
         line.hidden = false
         
-        if number == 6 {
+        if number == 8 {
             line.hidden = true
         }
         
@@ -189,16 +181,8 @@ class Home: UIViewController,UITabBarControllerDelegate {
             let scale = CGAffineTransformMakeScale(1, 1)
             let translate = CGAffineTransformMakeTranslation(0, 0)
             self.dialogView.transform = CGAffineTransformConcat(scale, translate)
-            //            self.dialogView.alpha = 1
+            
         }
-        
-        //
-        //println(data.count)
-        //         println(number)
-        
-        
-       
-        //        backgroundImageView.image = UIImage(named: data[number]["image"]!)
         
     }
     
@@ -346,32 +330,11 @@ class Home: UIViewController,UITabBarControllerDelegate {
             {
                 let controller = navController.viewControllers[0] as CandyTableViewController
                 controller.data = data;
-//                controller.filteredArray = filteredArray
+             
                 
             }
         }
     }
-//    @IBAction func saveNewsItem(sender: AnyObject) {
-//        println("opgeslagen")
-//        UIView.animateWithDuration(0.5, animations: {
-//            self.newsAlert.alpha = 1.0
-//        })
-//    }
-//    
-//    // delete and resfresh button
-//    @IBAction func deleteNewsItem(sender: AnyObject) {
-//        
-//        animator.removeAllBehaviors()
-//        
-//        var gravity = UIGravityBehavior(items: [dialogView])
-//        gravity.gravityDirection = CGVectorMake(10, 0)
-//        animator.addBehavior(gravity)
-//        
-//        delay(0.3) {
-//            self.refreshView()
-//        }
-//        
-//    }
     
        func refreshView() {
         
@@ -389,7 +352,7 @@ class Home: UIViewController,UITabBarControllerDelegate {
         animator.removeAllBehaviors()
         
         snapBehavior = UISnapBehavior(item: dialogView, snapToPoint: view.center)
-        //       attachmentBehavior.anchorPoint = view.center
+        
         
         dialogView.center = view.center
         UIView.animateWithDuration(0.8, animations: {

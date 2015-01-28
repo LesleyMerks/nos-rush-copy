@@ -1,10 +1,3 @@
-//
-//  Detail.swift
-//  ShotsApp
-//
-//  Created by Meng To on 2014-07-29.
-//  Copyright (c) 2014 Meng To. All rights reserved.
-//
 
 import UIKit
 
@@ -97,24 +90,14 @@ class Detail: UITableViewController {
         container.addSubview(newsText!)
         
         
-        
-        // set the content size to be the size our our whole frame
        }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        //         newsContent.bounds.size = newsContent.contentSize
-        
-        
-        //        backButton.alpha = 1
-        //        springScaleFrom(backButton!, -100, 0, 0.5, 0.5)
+      
     }
     
-    //    override func prefersStatusBarHidden() -> Bool {
-    //        return true
-    //    }
-    
-    
+   
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if filteredArray.count > 3 {
@@ -158,8 +141,6 @@ class Detail: UITableViewController {
             let indexPath = self.tableView.indexPathForSelectedRow()!
             let destinationTitle = filteredArray[indexPath.row]
             candyDetailViewController.data = destinationTitle
-            //            candyDetailViewController.filteredArray[indexPath.row]
-            
         }
         
     }

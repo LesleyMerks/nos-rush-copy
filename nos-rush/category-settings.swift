@@ -17,13 +17,7 @@ class CategorySettings: UITableViewController, UITableViewDelegate, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         println(data)
-        
-        
-        
-        
     }
     
     

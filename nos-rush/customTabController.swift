@@ -15,43 +15,15 @@ class customTabController: UITabBarController, UITabBarControllerDelegate  {
     
        override func viewDidLoad() {
         super.viewDidLoad()
-//        self.delegate = self
-        
       
                 // load second tabbarview
        self.selectedIndex = 1;
         let tabItems = tabBar.items as [UITabBarItem]
-       
-        
-
-
-//        tabItems[0].title = "First"
-        
-        
         let appearance = UITabBar.appearance()
 
         appearance.selectedImageTintColor = UIColor (rgba: "#fff")
        
-
-
-
         
-//       var cameraTab : UITabBarItem = self.tabBar.items![1] as UITabBarItem
-//       cameraTab.badgeValue = "4"
-        
-    
-            
     }
-//    
-//    override func prepareForSegue(segue: UIStoryboardSegue,
-//        sender: AnyObject?) {
-//            if segue.identifier == "test" {
-//            let segue = segue.destinationViewController as
-//            Archive
-//            segue.data = data
-//            println(data)
-//                
-//            }
-//    }
     
     }

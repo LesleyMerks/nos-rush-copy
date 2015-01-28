@@ -12,10 +12,8 @@ class InstructionView: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
-//        view.backgroundColor = UIColor(patternImage: UIImage(named: imageFile)!)
         setupPageControl()
-        let imageView = UIImageView(frame: CGRectMake(80, 60, 140, 300) )
+        let imageView = UIImageView(frame: CGRectMake(90, 60, 140, 300) )
         imageView.image=UIImage(named: imageFile)
         imageView.contentMode = .ScaleAspectFill
 
